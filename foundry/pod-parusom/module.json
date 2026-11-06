@@ -1,0 +1,151 @@
+{
+  "id": "pod-parusom",
+  "title": "Под парусом на костылях · Истории Огма",
+  "description": "Иллюстрированное приключение, оцифрованные NPC, подготовленные сцены и автоматизация для dnd5e 6.0.6. Сборка для проверки в Foundry 14.369.",
+  "version": "1.1.0",
+  "authors": [
+    {
+      "name": "Истории Огма"
+    }
+  ],
+  "compatibility": {
+    "minimum": "14.367",
+    "maximum": "14.999"
+  },
+  "relationships": {
+    "systems": [
+      {
+        "id": "dnd5e",
+        "type": "system",
+        "compatibility": {
+          "minimum": "6.0.6",
+          "maximum": "6.0.6"
+        }
+      }
+    ],
+    "recommends": [
+      {
+        "id": "midi-qol",
+        "type": "module"
+      },
+      {
+        "id": "dae",
+        "type": "module"
+      },
+      {
+        "id": "lib-wrapper",
+        "type": "module"
+      },
+      {
+        "id": "socketlib",
+        "type": "module"
+      },
+      {
+        "id": "sequencer",
+        "type": "module"
+      },
+      {
+        "id": "autoanimations",
+        "type": "module"
+      }
+    ]
+  },
+  "esmodules": [
+    "scripts/main.mjs",
+    "scripts/finales.mjs"
+  ],
+  "styles": [
+    "styles/module.css"
+  ],
+  "packs": [
+    {
+      "name": "adventure",
+      "label": "Парус · Приключение",
+      "path": "packs/adventure",
+      "type": "Adventure",
+      "system": "dnd5e",
+      "ownership": {
+        "PLAYER": "NONE",
+        "TRUSTED": "NONE",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "actors",
+      "label": "Парус · Актёры",
+      "path": "packs/actors",
+      "type": "Actor",
+      "system": "dnd5e",
+      "ownership": {
+        "PLAYER": "NONE",
+        "TRUSTED": "NONE",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "scenes",
+      "label": "Парус · Сцены",
+      "path": "packs/scenes",
+      "type": "Scene",
+      "system": "dnd5e",
+      "ownership": {
+        "PLAYER": "NONE",
+        "TRUSTED": "NONE",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "journal",
+      "label": "Парус · Книга",
+      "path": "packs/journal",
+      "type": "JournalEntry",
+      "system": "dnd5e",
+      "ownership": {
+        "PLAYER": "NONE",
+        "TRUSTED": "NONE",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "macros",
+      "label": "Парус · Макросы",
+      "path": "packs/macros",
+      "type": "Macro",
+      "system": "dnd5e",
+      "ownership": {
+        "PLAYER": "NONE",
+        "TRUSTED": "NONE",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "tables",
+      "label": "Парус · Таблицы",
+      "path": "packs/tables",
+      "type": "RollTable",
+      "system": "dnd5e",
+      "ownership": {
+        "PLAYER": "NONE",
+        "TRUSTED": "NONE",
+        "ASSISTANT": "OWNER"
+      }
+    }
+  ],
+  "packFolders": [
+    {
+      "name": "Под парусом на костылях",
+      "sorting": "m",
+      "packs": [
+        "adventure",
+        "actors",
+        "scenes",
+        "journal",
+        "macros",
+        "tables"
+      ]
+    }
+  ],
+  "url": "https://github.com/Zajor-DND/Ogm-history",
+  "manifest": "https://raw.githubusercontent.com/Zajor-DND/Ogm-history/main/foundry/pod-parusom/module.json",
+  "download": "https://github.com/Zajor-DND/Ogm-history/releases/download/pod-parusom-v1.1.0/Pod_parusom_Foundry_1.1.0.zip"
+}
