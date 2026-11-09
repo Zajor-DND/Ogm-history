@@ -2,7 +2,7 @@
   "id": "pod-parusom",
   "title": "Под парусом на костылях · Истории Огма",
   "description": "Под парусом на костылях: приключение и 81 анимация отдельных атак и способностей. Foundry 14 / dnd5e 6.0.6; сборка для проверки в мире.",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "authors": [
     {
       "name": "Истории Огма"
@@ -149,5 +149,5 @@
   "url": "https://github.com/Zajor-DND/Ogm-history",
   "socket": true,
   "manifest": "https://raw.githubusercontent.com/Zajor-DND/Ogm-history/main/foundry/pod-parusom/module.json",
-  "download": "https://github.com/Zajor-DND/Ogm-history/releases/download/pod-parusom-v1.2.0/Pod_parusom_Foundry_1.2.0_full.zip"
+  "download": "https://github.com/Zajor-DND/Ogm-history/releases/download/pod-parusom-v1.2.1/Pod_parusom_Foundry_1.2.1_full.zip"
 }

@@ -1,0 +1,750 @@
+{
+  "version": "1.2.1",
+  "clips": {
+    "01_01": {
+      "id": "01_01",
+      "profile": "VL",
+      "name": "Массивный кулак",
+      "file": "assets/animations/01/01_01.webm",
+      "durationMs": 1280,
+      "mode": "workflow"
+    },
+    "01_02": {
+      "id": "01_02",
+      "profile": "VL",
+      "name": "Выстрел орудия / Короткая очередь",
+      "file": "assets/animations/01/01_02.webm",
+      "durationMs": 1280,
+      "mode": "workflow"
+    },
+    "01_03": {
+      "id": "01_03",
+      "profile": "VL",
+      "name": "Подавляющий залп",
+      "file": "assets/animations/01/01_03.webm",
+      "durationMs": 1280,
+      "mode": "workflow"
+    },
+    "01_04": {
+      "id": "01_04",
+      "profile": "VL",
+      "name": "Речь вождя",
+      "file": "assets/animations/01/01_04.webm",
+      "durationMs": 1280,
+      "mode": "workflow"
+    },
+    "01_05": {
+      "id": "01_05",
+      "profile": "VL",
+      "name": "Броневой разворот",
+      "file": "assets/animations/01/01_05.webm",
+      "durationMs": 1280,
+      "mode": "workflow"
+    },
+    "01_06": {
+      "id": "01_06",
+      "profile": "VL",
+      "name": "Шаг вождя",
+      "file": "assets/animations/01/01_06.webm",
+      "durationMs": 1280,
+      "mode": "workflow"
+    },
+    "01_07": {
+      "id": "01_07",
+      "profile": "VL",
+      "name": "Перестроение",
+      "file": "assets/animations/01/01_07.webm",
+      "durationMs": 1280,
+      "mode": "workflow"
+    },
+    "01_08": {
+      "id": "01_08",
+      "profile": "VL",
+      "name": "Сокрушающий удар",
+      "file": "assets/animations/01/01_08.webm",
+      "durationMs": 1280,
+      "mode": "workflow"
+    },
+    "01_11": {
+      "id": "01_11",
+      "profile": "VL",
+      "name": "Легендарное сопротивление",
+      "file": "assets/animations/01/01_11.webm",
+      "durationMs": 1280,
+      "mode": "api"
+    },
+    "02_01": {
+      "id": "02_01",
+      "profile": "H",
+      "name": "Офицерская сабля",
+      "file": "assets/animations/02/02_01.webm",
+      "durationMs": 1280,
+      "mode": "workflow"
+    },
+    "02_02": {
+      "id": "02_02",
+      "profile": "H",
+      "name": "Аркан-пистолет / Прицельный выстрел",
+      "file": "assets/animations/02/02_02.webm",
+      "durationMs": 1280,
+      "mode": "workflow"
+    },
+    "02_03": {
+      "id": "02_03",
+      "profile": "H",
+      "name": "Приказ устрашения",
+      "file": "assets/animations/02/02_03.webm",
+      "durationMs": 1280,
+      "mode": "workflow"
+    },
+    "02_04": {
+      "id": "02_04",
+      "profile": "H",
+      "name": "Держать строй",
+      "file": "assets/animations/02/02_04.webm",
+      "durationMs": 1280,
+      "mode": "workflow"
+    },
+    "02_05": {
+      "id": "02_05",
+      "profile": "H",
+      "name": "Парирование",
+      "file": "assets/animations/02/02_05.webm",
+      "durationMs": 1280,
+      "mode": "workflow"
+    },
+    "02_06": {
+      "id": "02_06",
+      "profile": "H",
+      "name": "Тактический шаг",
+      "file": "assets/animations/02/02_06.webm",
+      "durationMs": 1280,
+      "mode": "workflow"
+    },
+    "02_07": {
+      "id": "02_07",
+      "profile": "H",
+      "name": "Собраться!",
+      "file": "assets/animations/02/02_07.webm",
+      "durationMs": 1280,
+      "mode": "workflow"
+    },
+    "02_08": {
+      "id": "02_08",
+      "profile": "H",
+      "name": "Огонь по приказу",
+      "file": "assets/animations/02/02_08.webm",
+      "durationMs": 1280,
+      "mode": "workflow"
+    },
+    "02_17": {
+      "id": "02_17",
+      "profile": "H",
+      "name": "Легендарное сопротивление",
+      "file": "assets/animations/02/02_17.webm",
+      "durationMs": 1280,
+      "mode": "api"
+    },
+    "03_01": {
+      "id": "03_01",
+      "profile": "F",
+      "name": "Комиссарская алебарда",
+      "file": "assets/animations/03/03_01.webm",
+      "durationMs": 1120,
+      "mode": "workflow"
+    },
+    "03_02": {
+      "id": "03_02",
+      "profile": "F",
+      "name": "Мушкет",
+      "file": "assets/animations/03/03_02.webm",
+      "durationMs": 1120,
+      "mode": "workflow"
+    },
+    "03_03": {
+      "id": "03_03",
+      "profile": "F",
+      "name": "Задержание",
+      "file": "assets/animations/03/03_03.webm",
+      "durationMs": 1120,
+      "mode": "workflow"
+    },
+    "03_04": {
+      "id": "03_04",
+      "profile": "F",
+      "name": "Декрет задержания",
+      "file": "assets/animations/03/03_04.webm",
+      "durationMs": 1120,
+      "mode": "workflow"
+    },
+    "03_05": {
+      "id": "03_05",
+      "profile": "F",
+      "name": "Защитить гражданина",
+      "file": "assets/animations/03/03_05.webm",
+      "durationMs": 1120,
+      "mode": "workflow"
+    },
+    "03_07": {
+      "id": "03_07",
+      "profile": "F",
+      "name": "Приоритетная цель: усиленное попадание",
+      "file": "assets/animations/03/03_07.webm",
+      "durationMs": 1280,
+      "mode": "conditional"
+    },
+    "04_01": {
+      "id": "04_01",
+      "profile": "PAT",
+      "name": "Дубинка",
+      "file": "assets/animations/04/04_01.webm",
+      "durationMs": 1280,
+      "mode": "workflow"
+    },
+    "04_02": {
+      "id": "04_02",
+      "profile": "PAT",
+      "name": "Мушкет",
+      "file": "assets/animations/04/04_02.webm",
+      "durationMs": 1120,
+      "mode": "workflow"
+    },
+    "04_03": {
+      "id": "04_03",
+      "profile": "PAT",
+      "name": "Толчок щитом",
+      "file": "assets/animations/04/04_03.webm",
+      "durationMs": 1280,
+      "mode": "workflow"
+    },
+    "05_01": {
+      "id": "05_01",
+      "profile": "ARM",
+      "name": "Короткий удар алебардой",
+      "file": "assets/animations/05/05_01.webm",
+      "durationMs": 1120,
+      "mode": "workflow"
+    },
+    "05_03": {
+      "id": "05_03",
+      "profile": "ARM",
+      "name": "Перехват прохода",
+      "file": "assets/animations/05/05_03.webm",
+      "durationMs": 1200,
+      "mode": "workflow"
+    },
+    "06_01": {
+      "id": "06_01",
+      "profile": "WRK",
+      "name": "Промышленный захват: урон",
+      "file": "assets/animations/06/06_01.webm",
+      "durationMs": 1120,
+      "mode": "workflow"
+    },
+    "06_02": {
+      "id": "06_02",
+      "profile": "WRK",
+      "name": "Промышленный захват: схватить вместо урона",
+      "file": "assets/animations/06/06_02.webm",
+      "durationMs": 1280,
+      "mode": "manual"
+    },
+    "06_03": {
+      "id": "06_03",
+      "profile": "WRK",
+      "name": "Бросок обломка",
+      "file": "assets/animations/06/06_03.webm",
+      "durationMs": 1280,
+      "mode": "workflow"
+    },
+    "07_01": {
+      "id": "07_01",
+      "profile": "AUTO",
+      "name": "Удар рычагом",
+      "file": "assets/animations/07/07_01.webm",
+      "durationMs": 1120,
+      "mode": "workflow"
+    },
+    "07_02": {
+      "id": "07_02",
+      "profile": "AUTO",
+      "name": "Зацепить тросом",
+      "file": "assets/animations/07/07_02.webm",
+      "durationMs": 1120,
+      "mode": "workflow"
+    },
+    "08_01": {
+      "id": "08_01",
+      "profile": "MIL",
+      "name": "Копьё",
+      "file": "assets/animations/08/08_01.webm",
+      "durationMs": 1120,
+      "mode": "workflow"
+    },
+    "08_02": {
+      "id": "08_02",
+      "profile": "MIL",
+      "name": "Лёгкий арбалет",
+      "file": "assets/animations/08/08_02.webm",
+      "durationMs": 1120,
+      "mode": "workflow"
+    },
+    "08_03": {
+      "id": "08_03",
+      "profile": "MIL",
+      "name": "Щит товарища",
+      "file": "assets/animations/08/08_03.webm",
+      "durationMs": 1120,
+      "mode": "workflow"
+    },
+    "09_01": {
+      "id": "09_01",
+      "profile": "MILS",
+      "name": "Мушкет",
+      "file": "assets/animations/09/09_01.webm",
+      "durationMs": 1120,
+      "mode": "workflow"
+    },
+    "10_01": {
+      "id": "10_01",
+      "profile": "KURT",
+      "name": "Короткий меч",
+      "file": "assets/animations/10/10_01.webm",
+      "durationMs": 1120,
+      "mode": "workflow"
+    },
+    "10_02": {
+      "id": "10_02",
+      "profile": "KURT",
+      "name": "Лёгкий арбалет",
+      "file": "assets/animations/10/10_02.webm",
+      "durationMs": 1120,
+      "mode": "workflow"
+    },
+    "10_03": {
+      "id": "10_03",
+      "profile": "KURT",
+      "name": "Зажигательная бутылка",
+      "file": "assets/animations/10/10_03.webm",
+      "durationMs": 1120,
+      "mode": "workflow"
+    },
+    "10_04": {
+      "id": "10_04",
+      "profile": "KURT",
+      "name": "Шмыгнуть за спины",
+      "file": "assets/animations/10/10_04.webm",
+      "durationMs": 1120,
+      "mode": "workflow"
+    },
+    "11_01": {
+      "id": "11_01",
+      "profile": "HOOL",
+      "name": "Дубинка",
+      "file": "assets/animations/11/11_01.webm",
+      "durationMs": 1120,
+      "mode": "workflow"
+    },
+    "11_02": {
+      "id": "11_02",
+      "profile": "HOOL",
+      "name": "Камень",
+      "file": "assets/animations/11/11_02.webm",
+      "durationMs": 1120,
+      "mode": "workflow"
+    },
+    "11_03": {
+      "id": "11_03",
+      "profile": "HOOL",
+      "name": "Нож",
+      "file": "assets/animations/11/11_03.webm",
+      "durationMs": 1120,
+      "mode": "workflow"
+    },
+    "11_04": {
+      "id": "11_04",
+      "profile": "HOOL",
+      "name": "Толчок с Храбростью толпы",
+      "file": "assets/animations/11/11_04.webm",
+      "durationMs": 1280,
+      "mode": "manual"
+    },
+    "12_01": {
+      "id": "12_01",
+      "profile": "PIE",
+      "name": "Деревянная дубинка",
+      "file": "assets/animations/12/12_01.webm",
+      "durationMs": 1120,
+      "mode": "workflow"
+    },
+    "12_02": {
+      "id": "12_02",
+      "profile": "PIE",
+      "name": "Мушкет",
+      "file": "assets/animations/12/12_02.webm",
+      "durationMs": 1120,
+      "mode": "workflow"
+    },
+    "12_03": {
+      "id": "12_03",
+      "profile": "PIE",
+      "name": "Сигнал тревоги",
+      "file": "assets/animations/12/12_03.webm",
+      "durationMs": 1120,
+      "mode": "workflow"
+    },
+    "12_04": {
+      "id": "12_04",
+      "profile": "PIE",
+      "name": "Не трогайте гражданина!",
+      "file": "assets/animations/12/12_04.webm",
+      "durationMs": 1120,
+      "mode": "workflow"
+    },
+    "13_01": {
+      "id": "13_01",
+      "profile": "WOLF",
+      "name": "Индукционный луч",
+      "file": "assets/animations/13/13_01.webm",
+      "durationMs": 1120,
+      "mode": "workflow"
+    },
+    "13_03": {
+      "id": "13_03",
+      "profile": "WOLF",
+      "name": "Фиксирующий импульс",
+      "file": "assets/animations/13/13_03.webm",
+      "durationMs": 1120,
+      "mode": "workflow"
+    },
+    "13_04": {
+      "id": "13_04",
+      "profile": "WOLF",
+      "name": "Перегрузочный разряд",
+      "file": "assets/animations/13/13_04.webm",
+      "durationMs": 1200,
+      "mode": "workflow"
+    },
+    "13_05": {
+      "id": "13_05",
+      "profile": "WOLF",
+      "name": "Конденсаторный щит",
+      "file": "assets/animations/13/13_05.webm",
+      "durationMs": 1200,
+      "mode": "workflow"
+    },
+    "13_06": {
+      "id": "13_06",
+      "profile": "WOLF",
+      "name": "Работа у пульта — один раунд",
+      "file": "assets/animations/13/13_06.webm",
+      "durationMs": 1200,
+      "mode": "workflow"
+    },
+    "14_01": {
+      "id": "14_01",
+      "profile": "MEY",
+      "name": "Дуговой инструмент",
+      "file": "assets/animations/14/14_01.webm",
+      "durationMs": 1200,
+      "mode": "workflow"
+    },
+    "14_02": {
+      "id": "14_02",
+      "profile": "MEY",
+      "name": "Ключ",
+      "file": "assets/animations/14/14_02.webm",
+      "durationMs": 1200,
+      "mode": "workflow"
+    },
+    "14_03": {
+      "id": "14_03",
+      "profile": "MEY",
+      "name": "Полевой ремонт",
+      "file": "assets/animations/14/14_03.webm",
+      "durationMs": 1200,
+      "mode": "workflow"
+    },
+    "14_04": {
+      "id": "14_04",
+      "profile": "MEY",
+      "name": "Пена-фиксатор",
+      "file": "assets/animations/14/14_04.webm",
+      "durationMs": 1200,
+      "mode": "workflow"
+    },
+    "14_05": {
+      "id": "14_05",
+      "profile": "MEY",
+      "name": "Работа у пульта — один раунд",
+      "file": "assets/animations/14/14_05.webm",
+      "durationMs": 1200,
+      "mode": "workflow"
+    },
+    "15_01": {
+      "id": "15_01",
+      "profile": "OTTO",
+      "name": "Клинок из трости",
+      "file": "assets/animations/15/15_01.webm",
+      "durationMs": 1200,
+      "mode": "workflow"
+    },
+    "15_02": {
+      "id": "15_02",
+      "profile": "OTTO",
+      "name": "Карманный пистолет",
+      "file": "assets/animations/15/15_02.webm",
+      "durationMs": 1200,
+      "mode": "workflow"
+    },
+    "15_03": {
+      "id": "15_03",
+      "profile": "OTTO",
+      "name": "Поспешный отход",
+      "file": "assets/animations/15/15_03.webm",
+      "durationMs": 1200,
+      "mode": "workflow"
+    },
+    "15_04": {
+      "id": "15_04",
+      "profile": "OTTO",
+      "name": "Дымовой патрон",
+      "file": "assets/animations/15/15_04.webm",
+      "durationMs": 1200,
+      "mode": "workflow"
+    },
+    "16_01": {
+      "id": "16_01",
+      "profile": "ELI",
+      "name": "Священное пламя",
+      "file": "assets/animations/16/16_01.webm",
+      "durationMs": 1200,
+      "mode": "workflow"
+    },
+    "16_02": {
+      "id": "16_02",
+      "profile": "ELI",
+      "name": "Направляющий снаряд",
+      "file": "assets/animations/16/16_02.webm",
+      "durationMs": 1200,
+      "mode": "workflow"
+    },
+    "16_03": {
+      "id": "16_03",
+      "profile": "ELI",
+      "name": "Лечение ран",
+      "file": "assets/animations/16/16_03.webm",
+      "durationMs": 1200,
+      "mode": "workflow"
+    },
+    "16_04": {
+      "id": "16_04",
+      "profile": "ELI",
+      "name": "Булава",
+      "file": "assets/animations/16/16_04.webm",
+      "durationMs": 1200,
+      "mode": "workflow"
+    },
+    "17_01": {
+      "id": "17_01",
+      "profile": "CIV",
+      "name": "Подручный предмет",
+      "file": "assets/animations/17/17_01.webm",
+      "durationMs": 1200,
+      "mode": "workflow"
+    },
+    "18_01": {
+      "id": "18_01",
+      "profile": "REGM",
+      "name": "Военный меч",
+      "file": "assets/animations/18/18_01.webm",
+      "durationMs": 1200,
+      "mode": "workflow"
+    },
+    "18_03": {
+      "id": "18_03",
+      "profile": "REGM",
+      "name": "Удерживать рубеж",
+      "file": "assets/animations/18/18_03.webm",
+      "durationMs": 1200,
+      "mode": "workflow"
+    },
+    "18_04": {
+      "id": "18_04",
+      "profile": "REGM",
+      "name": "Встречный удар",
+      "file": "assets/animations/18/18_04.webm",
+      "durationMs": 1200,
+      "mode": "workflow"
+    },
+    "18_05": {
+      "id": "18_05",
+      "profile": "REGM",
+      "name": "Прикрыть товарища",
+      "file": "assets/animations/18/18_05.webm",
+      "durationMs": 1200,
+      "mode": "workflow"
+    },
+    "18_06": {
+      "id": "18_06",
+      "profile": "REGM",
+      "name": "Строевой натиск: усиленное попадание",
+      "file": "assets/animations/18/18_06.webm",
+      "durationMs": 1200,
+      "mode": "conditional"
+    },
+    "19_01": {
+      "id": "19_01",
+      "profile": "REGR",
+      "name": "Военный мушкет",
+      "file": "assets/animations/19/19_01.webm",
+      "durationMs": 1200,
+      "mode": "workflow"
+    },
+    "19_02": {
+      "id": "19_02",
+      "profile": "REGR",
+      "name": "Армейский нож",
+      "file": "assets/animations/19/19_02.webm",
+      "durationMs": 1200,
+      "mode": "workflow"
+    },
+    "19_05": {
+      "id": "19_05",
+      "profile": "REGR",
+      "name": "Прицельная стойка",
+      "file": "assets/animations/19/19_05.webm",
+      "durationMs": 1200,
+      "mode": "workflow"
+    },
+    "19_06": {
+      "id": "19_06",
+      "profile": "REGR",
+      "name": "Смена позиции",
+      "file": "assets/animations/19/19_06.webm",
+      "durationMs": 1200,
+      "mode": "workflow"
+    },
+    "20_01": {
+      "id": "20_01",
+      "profile": "ARC",
+      "name": "Зарядить арканган",
+      "file": "assets/animations/20/20_01.webm",
+      "durationMs": 1200,
+      "mode": "workflow"
+    },
+    "20_02": {
+      "id": "20_02",
+      "profile": "ARC",
+      "name": "Навести и выстрелить: Кристаллический разряд",
+      "file": "assets/animations/20/20_02.webm",
+      "durationMs": 1200,
+      "mode": "workflow"
+    },
+    "20_03": {
+      "id": "20_03",
+      "profile": "ARC",
+      "name": "Наведение без выстрела — визуальная фаза",
+      "file": "assets/animations/20/20_03.webm",
+      "durationMs": 1200,
+      "mode": "manual"
+    }
+  },
+  "itemBindings": {
+    "VL:actions:1:Массивный кулак": "01_01",
+    "VL:actions:2:Выстрел орудия": "01_02",
+    "VL:legend:2:Короткая очередь, 2 действия": "01_02",
+    "VL:actions:3:Подавляющий залп, перезарядка 5–6": "01_03",
+    "VL:bonus:0:Речь вождя, 1/день": "01_04",
+    "VL:reaction:0:Броневой разворот": "01_05",
+    "VL:legend:0:Шаг вождя, 1 действие": "01_06",
+    "VL:legend:1:Перестроение, 1 действие": "01_07",
+    "VL:legend:3:Сокрушающий удар, 2 действия": "01_08",
+    "H:actions:1:Офицерская сабля": "02_01",
+    "H:actions:2:Аркан-пистолет": "02_02",
+    "H:legend:2:Прицельный выстрел, 2 действия": "02_02",
+    "H:actions:3:Приказ устрашения, перезарядка 5–6": "02_03",
+    "H:bonus:0:Держать строй, 1/день": "02_04",
+    "H:reaction:0:Парирование": "02_05",
+    "H:legend:0:Тактический шаг, 1 действие": "02_06",
+    "H:legend:1:Собраться!, 1 действие": "02_07",
+    "H:legend:3:Огонь по приказу, 2 действия": "02_08",
+    "F:actions:1:Комиссарская алебарда": "03_01",
+    "F:actions:2:Мушкет": "03_02",
+    "F:actions:3:Задержание": "03_03",
+    "F:bonus:0:Декрет задержания": "03_04",
+    "F:reaction:0:Защитить гражданина": "03_05",
+    "PAT:actions:0:Дубинка": "04_01",
+    "PAT:actions:1:Мушкет": "04_02",
+    "PAT:actions:2:Толчок щитом": "04_03",
+    "ARM:actions:1:Короткий удар алебардой": "05_01",
+    "ARM:reaction:0:Перехват прохода": "05_03",
+    "WRK:actions:0:Промышленный захват": "06_01",
+    "WRK:actions:1:Бросок обломка": "06_03",
+    "AUTO:actions:0:Удар рычагом": "07_01",
+    "AUTO:actions:1:Зацепить тросом": "07_02",
+    "MIL:actions:0:Копьё": "08_01",
+    "MIL:actions:1:Лёгкий арбалет": "08_02",
+    "MIL:reaction:0:Щит товарища": "08_03",
+    "MILS:actions:1:Мушкет": "09_01",
+    "KURT:actions:1:Короткий меч": "10_01",
+    "KURT:actions:2:Лёгкий арбалет": "10_02",
+    "KURT:actions:3:Зажигательная бутылка, перезарядка 5–6": "10_03",
+    "KURT:bonus:0:Шмыгнуть за спины": "10_04",
+    "HOOL:actions:0:Дубинка или нож": "11_01",
+    "HOOL:actions:1:Камень": "11_02",
+    "HOOL:knife": "11_03",
+    "PIE:actions:0:Деревянная дубинка": "12_01",
+    "PIE:actions:1:Мушкет": "12_02",
+    "PIE:actions:2:Сигнал тревоги": "12_03",
+    "PIE:reaction:0:Не трогайте гражданина!": "12_04",
+    "WOLF:actions:1:Индукционный луч": "13_01",
+    "WOLF:actions:2:Фиксирующий импульс, перезарядка 5–6": "13_03",
+    "WOLF:actions:3:Перегрузочный разряд, 1/день": "13_04",
+    "WOLF:reaction:0:Конденсаторный щит, 3/день": "13_05",
+    "work:WOLF": "13_06",
+    "MEY:actions:0:Дуговой инструмент": "14_01",
+    "MEY:actions:1:Ключ": "14_02",
+    "MEY:actions:2:Полевой ремонт, 3/день": "14_03",
+    "MEY:actions:3:Пена-фиксатор, перезарядка 5–6": "14_04",
+    "work:MEY": "14_05",
+    "OTTO:actions:1:Клинок из трости": "15_01",
+    "OTTO:actions:2:Карманный пистолет": "15_02",
+    "OTTO:bonus:0:Поспешный отход": "15_03",
+    "OTTO:bonus:1:Дымовой патрон, 1/день": "15_04",
+    "ELI:actions:0:Священное пламя": "16_01",
+    "ELI:actions:1:Направляющий снаряд, 3/день": "16_02",
+    "ELI:actions:2:Лечение ран, 3/день": "16_03",
+    "ELI:actions:3:Булава": "16_04",
+    "CIV:actions:0:Подручный предмет": "17_01",
+    "REGM:actions:1:Военный меч": "18_01",
+    "REGM:bonus:0:Удерживать рубеж": "18_03",
+    "REGM:reaction:0:Встречный удар": "18_04",
+    "REGM:reaction:1:Прикрыть товарища": "18_05",
+    "REGR:actions:1:Военный мушкет": "19_01",
+    "REGR:actions:2:Армейский нож": "19_02",
+    "REGR:bonus:0:Прицельная стойка": "19_05",
+    "REGR:bonus:1:Смена позиции": "19_06",
+    "ARC:actions:0:Зарядить арканган": "20_01",
+    "ARC:actions:0:Кристаллический разряд": "20_02"
+  },
+  "profileAliases": {
+    "BRUNO": "CIV",
+    "LIZEL": "CIV",
+    "GERHARD": "CIV",
+    "PIEB": "PIE"
+  },
+  "missing": [
+    {
+      "id": "09_02",
+      "profile": "MILS",
+      "name": "Нож",
+      "reason": "GIF не создан: запрос отклонён генератором."
+    }
+  ],
+  "manualNotes": {
+    "06_02": "Захват вместо урона разрешается мастером; клип не меняет расчёт урона существующей Activity.",
+    "11_04": "Толчок разрешается через общую механику системы; Храбрость толпы не отдельная атака.",
+    "20_03": "Только визуальная фаза наведения, включённая в выстрел; не новое действие."
+  }
+}
