@@ -1,0 +1,99 @@
+{
+  "id": "oghma-heroes",
+  "title": "Истории Огма — Герои и анимации",
+  "description": "Утхал, Тристан, Вако: листы 6-го уровня, анимации, призывы и автоматизация.",
+  "version": "1.0.0",
+  "authors": [
+    {
+      "name": "ДНД · Истории Огма"
+    }
+  ],
+  "compatibility": {
+    "minimum": "14.369",
+    "verified": "14.369",
+    "maximum": "14"
+  },
+  "relationships": {
+    "systems": [
+      {
+        "id": "dnd5e",
+        "type": "system",
+        "compatibility": {
+          "minimum": "6.0.6",
+          "maximum": "6.0.6"
+        }
+      }
+    ],
+    "requires": [
+      {
+        "id": "midi-qol",
+        "type": "module"
+      },
+      {
+        "id": "sequencer",
+        "type": "module"
+      },
+      {
+        "id": "socketlib",
+        "type": "module"
+      }
+    ]
+  },
+  "esmodules": [
+    "scripts/main.mjs"
+  ],
+  "socket": true,
+  "packs": [
+    {
+      "name": "adventure",
+      "label": "Герои — импорт комплекта",
+      "path": "packs/adventure",
+      "type": "Adventure",
+      "system": "dnd5e",
+      "ownership": {
+        "PLAYER": "NONE",
+        "TRUSTED": "NONE",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "actors",
+      "label": "Герои и призывы",
+      "path": "packs/actors",
+      "type": "Actor",
+      "system": "dnd5e",
+      "ownership": {
+        "PLAYER": "NONE",
+        "TRUSTED": "NONE",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "macros",
+      "label": "Управление анимациями",
+      "path": "packs/macros",
+      "type": "Macro",
+      "system": "dnd5e",
+      "ownership": {
+        "PLAYER": "NONE",
+        "TRUSTED": "NONE",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "journal",
+      "label": "Инструкция и исходные листы",
+      "path": "packs/journal",
+      "type": "JournalEntry",
+      "system": "dnd5e",
+      "ownership": {
+        "PLAYER": "NONE",
+        "TRUSTED": "NONE",
+        "ASSISTANT": "OWNER"
+      }
+    }
+  ],
+  "url": "https://github.com/Zajor-DND/Ogm-history",
+  "manifest": "https://raw.githubusercontent.com/Zajor-DND/Ogm-history/main/foundry/oghma-heroes/module.json",
+  "download": "https://github.com/Zajor-DND/Ogm-history/releases/download/oghma-heroes-v1.0.0/Oghma_Heroes_Foundry_1.0.0.zip"
+}
