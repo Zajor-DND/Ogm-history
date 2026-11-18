@@ -1,8 +1,8 @@
 {
   "id": "oghma-heroes",
   "title": "Истории Огма — Герои и анимации",
-  "description": "Утхал, Тристан, Вако: листы 6-го уровня, анимации, призывы и автоматизация.",
-  "version": "1.0.0",
+  "description": "Утхал, Тристан, Вако, Ария и Мафир; анимации, призывы и автоматический Дикий облик.",
+  "version": "2.0.0",
   "authors": [
     {
       "name": "ДНД · Истории Огма"
@@ -10,7 +10,6 @@
   ],
   "compatibility": {
     "minimum": "14.369",
-    "verified": "14.369",
     "maximum": "14"
   },
   "relationships": {
@@ -93,7 +92,7 @@
       }
     }
   ],
-  "url": "https://github.com/Zajor-DND/Ogm-history",
+  "download": "https://github.com/Zajor-DND/Ogm-history/releases/download/oghma-heroes-v2.0.0/Oghma_Heroes_Foundry_2.0.0.zip",
   "manifest": "https://raw.githubusercontent.com/Zajor-DND/Ogm-history/main/foundry/oghma-heroes/module.json",
-  "download": "https://github.com/Zajor-DND/Ogm-history/releases/download/oghma-heroes-v1.0.0/Oghma_Heroes_Foundry_1.0.0.zip"
+  "url": "https://github.com/Zajor-DND/Ogm-history"
 }
