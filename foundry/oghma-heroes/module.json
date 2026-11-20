@@ -2,7 +2,7 @@
   "id": "oghma-heroes",
   "title": "Истории Огма — Герои и анимации",
   "description": "Утхал, Тристан, Вако, Ария и Мафир; анимации, призывы и автоматический Дикий облик.",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "authors": [
     {
       "name": "ДНД · Истории Огма"
@@ -92,7 +92,7 @@
       }
     }
   ],
-  "download": "https://github.com/Zajor-DND/Ogm-history/releases/download/oghma-heroes-v2.0.0/Oghma_Heroes_Foundry_2.0.0.zip",
+  "download": "https://github.com/Zajor-DND/Ogm-history/releases/download/oghma-heroes-v2.0.1/Oghma_Heroes_Foundry_2.0.1.zip",
   "manifest": "https://raw.githubusercontent.com/Zajor-DND/Ogm-history/main/foundry/oghma-heroes/module.json",
   "url": "https://github.com/Zajor-DND/Ogm-history"
 }
