@@ -1,0 +1,24 @@
+{
+  "id": "dobi-initiative-visualizer",
+  "title": "Доби Мик — визуализатор инициативы",
+  "description": "Отдельная лента боевой инициативы с токенами участников и подсветкой текущего хода.",
+  "version": "1.0.0",
+  "compatibility": {
+    "minimum": "14.367",
+    "verified": "14.369"
+  },
+  "authors": [
+    {
+      "name": "ДНД"
+    }
+  ],
+  "esmodules": [
+    "scripts/main.js"
+  ],
+  "styles": [
+    "styles/main.css"
+  ],
+  "url": "https://github.com/Zajor-DND/Ogm-history",
+  "manifest": "https://raw.githubusercontent.com/Zajor-DND/Ogm-history/main/foundry/dobi-initiative-visualizer/module.json",
+  "download": "https://github.com/Zajor-DND/Ogm-history/releases/download/dobi-mik-v1.0.0/dobi-initiative-visualizer.zip"
+}
