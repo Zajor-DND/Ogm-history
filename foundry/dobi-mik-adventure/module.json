@@ -3,35 +3,14 @@
   "title": "Доби Мик — приключение и сцены",
   "description": "Приключение D&D 5e 2014: 7 боевых сцен, панель запуска боёв, автоматические атаки и урон, спасброски по выбранным целям и поднимающаяся вода в лёгких.",
   "version": "1.4.0",
-  "compatibility": {
-    "minimum": "14.367",
-    "verified": "14.369"
-  },
-  "authors": [
-    {
-      "name": "ДНД"
-    }
-  ],
+  "compatibility": { "minimum": "14.367", "verified": "14.369" },
+  "authors": [{ "name": "ДНД" }],
   "system": "dnd5e",
-  "relationships": {
-    "systems": [
-      {
-        "id": "dnd5e",
-        "type": "system",
-        "compatibility": {
-          "minimum": "6.0.6"
-        }
-      }
-    ]
-  },
-  "esmodules": [
-    "scripts/main.js"
-  ],
-  "styles": [
-    "styles/main.css"
-  ],
+  "relationships": { "systems": [{ "id": "dnd5e", "type": "system", "compatibility": { "minimum": "6.0.6" } }] },
+  "esmodules": ["scripts/main.js"],
+  "styles": ["styles/main.css"],
   "license": "LICENSE",
   "url": "https://github.com/Zajor-DND/Ogm-history",
   "manifest": "https://raw.githubusercontent.com/Zajor-DND/Ogm-history/main/foundry/dobi-mik-adventure/module.json",
-  "download": "https://raw.githubusercontent.com/Zajor-DND/Ogm-history/main/foundry/dobi-mik-adventure/releases/1.4.0/dobi-mik-adventure.zip"
+  "download": "https://github.com/Zajor-DND/Ogm-history/releases/download/v1.4.0/dobi-mik-adventure-v1.4.0.zip"
 }
