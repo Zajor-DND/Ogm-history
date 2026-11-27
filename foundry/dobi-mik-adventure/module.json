@@ -1,8 +1,8 @@
 {
   "id": "dobi-mik-adventure",
   "title": "Доби Мик — приключение и сцены",
-  "description": "Приключение для D&D 5e 2014: семь сцен с локальными боевыми картами и непрерывно поднимающейся водой в лёгких.",
-  "version": "1.2.0",
+  "description": "Приключение для D&D 5e 2014: семь сцен с боевыми картами для уровней Foundry VTT 14 и нарастающей водой в лёгких.",
+  "version": "1.2.1",
   "compatibility": {
     "minimum": "14.367",
     "verified": "14.369"
@@ -33,5 +33,5 @@
   "license": "LICENSE",
   "url": "https://github.com/Zajor-DND/Ogm-history",
   "manifest": "https://raw.githubusercontent.com/Zajor-DND/Ogm-history/main/foundry/dobi-mik-adventure/module.json",
-  "download": "https://github.com/Zajor-DND/Ogm-history/releases/download/dobi-mik-adventure-v1.2.0/dobi-mik-adventure.zip"
+  "download": "https://github.com/Zajor-DND/Ogm-history/releases/download/dobi-mik-adventure-v1.2.1/dobi-mik-adventure.zip"
 }
