@@ -9,8 +9,7 @@ const ENCOUNTERS = {
   lungs: {name:"Бой в лёгких", sceneKey:"lungs", roster:[{actorKey:"alveolar-hunter",count:2},{actorKey:"lung-leech",count:3}]},
   intestine: {name:"Бой в кислотном море желудка", sceneKey:"stomach", roster:[{actorKey:"intestinal-parasite",count:4}]}
 };
-// The GM action panel is the single damage-application path. Each target gets an independent attack roll;
-// save outcomes are marked per target, then dnd5e applies typed damage with its resistance rules.
+// Monster actions are invoked from the individual Activities in each actor sheet.
 const MONSTER_ACTIONS = [
   {id:"whale-bite",actorKey:"dobi-mik",name:"Укус",kind:"attack",bonus:8,range:"10 фт.",damage:[{formula:"4d10 + 5",type:"piercing"}]},
   {id:"whale-tail",actorKey:"dobi-mik",name:"Хвост",kind:"attack",bonus:8,range:"15 фт.",damage:[{formula:"3d8 + 5",type:"bludgeoning"}],save:{ability:"str",dc:16,onFailStatus:"prone"}},
@@ -18,7 +17,8 @@ const MONSTER_ACTIONS = [
   {id:"slime-strike",actorKey:"alveolar-hunter",name:"Удар",kind:"attack",bonus:5,range:"5 фт.",damage:[{formula:"2d8 + 3",type:"bludgeoning"},{formula:"1d6",type:"acid"}]},
   {id:"slime-engulf",actorKey:"alveolar-hunter",name:"Обволакивание (перезарядка 5–6)",kind:"save",ability:"dex",dc:13,damage:[],onFailStatus:"grappled",ongoing:{formula:"2d6",type:"acid",trigger:"targetStart",status:"grappled"},note:"При провале цель схвачена; 2к6 кислотного урона в начале её хода.",recharge:5},
   {id:"leech-bite",actorKey:"lung-leech",name:"Укус",kind:"attack",bonus:5,range:"5 фт.",damage:[{formula:"1d8 + 3",type:"piercing"}],onHitStatus:"grappled",ongoing:{formula:"1d6",type:"piercing",trigger:"sourceStart",status:"grappled",healSource:true},note:"Цель схвачена (СЛ высвобождения 13). В начале хода пиявки схваченная цель получает 1к6 колющего урона; пиявка восстанавливает столько же хитов."},
-  {id:"parasite-multi",actorKey:"intestinal-parasite",name:"Мультиатака: два щупальца",kind:"multiattack",bonus:7,range:"10 фт.",strikes:2,damage:[{formula:"2d8 + 4",type:"bludgeoning"}],onHitStatus:"grappled",note:"Цель Большого размера или меньше схвачена (СЛ высвобождения 15)."},
+  {id:"parasite-tentacle-1",actorKey:"intestinal-parasite",name:"Щупальце — первая атака",kind:"attack",bonus:7,range:"10 фт.",damage:[{formula:"2d8 + 4",type:"bludgeoning"}],onHitStatus:"grappled",note:"Цель Большого размера или меньше схвачена (СЛ высвобождения 15)."},
+  {id:"parasite-tentacle-2",actorKey:"intestinal-parasite",name:"Щупальце — вторая атака",kind:"attack",bonus:7,range:"10 фт.",damage:[{formula:"2d8 + 4",type:"bludgeoning"}],onHitStatus:"grappled",note:"Цель Большого размера или меньше схвачена (СЛ высвобождения 15)."},
   {id:"parasite-swallow",actorKey:"intestinal-parasite",name:"Проглотить схваченную цель (перезарядка 6)",kind:"save",ability:"dex",dc:15,damage:[],onFailStatus:"restrained",alsoStatuses:["blinded"],ongoing:{formula:"2d6",type:"acid",trigger:"sourceStart",status:"restrained"},note:"При провале цель проглочена: она ослеплена и обездвижена; 2к6 кислотного урона в начале хода паразита.",recharge:6},
   {id:"tortuga-harpoon",actorKey:"tortuga-support",name:"Гарпун",kind:"attack",bonus:6,range:"5 фт.",damage:[{formula:"1d10 + 4",type:"piercing"}]},
   {id:"tortuga-help",actorKey:"tortuga-support",name:"Помощь с кораблём или снастями",kind:"help",note:"Даёт преимущество на одну связанную с кораблём или снастями проверку союзника; не усиливает атаку по киту."}
@@ -89,13 +89,22 @@ async function synchronizeImportedActors(actorData) {
     const actor=alreadyExists(game.actors,source.flags?.[MODULE_ID]?.sourceKey);
     if (!actor) continue;
     for (const sourceItem of source.items ?? []) {
-      const activities=sourceItem.system?.activities;
-      if (!activities || !Object.keys(activities).length) continue;
-      const item=actor.items.find(i=>i.name===sourceItem.name);
-      if (!item) { missing++; continue; }
+      const activities=sourceItem.system?.activities ?? {};
+      const removeActivityIds=sourceItem.flags?.[MODULE_ID]?.removeActivityIds ?? [];
+      if (!Object.keys(activities).length && !removeActivityIds.length) continue;
+      const sourceKey=sourceItem.flags?.[MODULE_ID]?.sourceKey ?? `${source.flags?.[MODULE_ID]?.sourceKey}:${sourceItem.name}`;
+      let item=actor.items.find(i=>i.getFlag(MODULE_ID,"sourceKey")===sourceKey) ?? actor.items.find(i=>i.name===sourceItem.name);
+      if (!item) {
+        [item]=await actor.createEmbeddedDocuments("Item",[{...sourceItem,flags:{...(sourceItem.flags??{}),[MODULE_ID]:{...(sourceItem.flags?.[MODULE_ID]??{}),sourceKey}}}]);
+        if (!item) { missing++; continue; }
+      }
       const updates={};
       for (const [id,activity] of Object.entries(activities)) updates[`system.activities.${id}`]=activity;
-      updates[`flags.${MODULE_ID}.sourceKey`]=sourceItem.flags?.[MODULE_ID]?.sourceKey ?? `${source.flags?.[MODULE_ID]?.sourceKey}:${sourceItem.name}`;
+      for (const id of removeActivityIds) updates[`system.activities.-=${id}`]=null;
+      updates[`flags.${MODULE_ID}.sourceKey`]=sourceKey;
+      if(sourceItem.flags?.[MODULE_ID]?.automationKey) updates[`flags.${MODULE_ID}.automationKey`]=sourceItem.flags[MODULE_ID].automationKey;
+      else updates[`flags.${MODULE_ID}.-=automationKey`]=null;
+      if(item.name!==sourceItem.name && importedByModule(item)) updates.name=sourceItem.name;
       await item.update(updates);
       patched++;
     }
@@ -340,9 +349,12 @@ async function processOngoingMonsterDamage(combat) {
   }
 }
 function sourceTokenForActor(actor) {
+  const embedded=actor?.token?.document ?? actor?.token;
+  if(embedded?.actor && (!canvas?.scene || embedded.parent?.id===canvas.scene.id)) return embedded;
   const combatant=game.combat?.combatant;
-  if(combatant?.actorId===actor.id && combatant.token) return combatant.token.document ?? combatant.token;
-  return canvas?.scene?.tokens?.find(token=>token.actorId===actor.id) ?? null;
+  if(combatant?.actor===actor || combatant?.actorId===actor.id) return combatant.token?.document ?? combatant.token ?? null;
+  const token=canvas?.scene?.tokens?.find(candidate=>candidate.actorId===actor.id);
+  return token ?? null;
 }
 async function rechargeReady(action,sourceActor) {
   if(!action.recharge) return true;
@@ -381,15 +393,16 @@ function saveOutcomeDialog(action,token,sourceActor,damageParts) {
     dialog.render(true);
   });
 }
-async function runMonsterAction(actionId) {
+async function runMonsterAction(actionId,sourceActor=null,sourceToken=null) {
   if(!game.user.isGM) return ui.notifications.error("Автоматические действия доступны ведущему.");
   const action=MONSTER_ACTIONS.find(row=>row.id===actionId);
   if(!action) return ui.notifications.error("Действие не найдено.");
-  const sourceActor=game.actors.find(actor=>actor.getFlag(MODULE_ID,"sourceKey")===action.actorKey);
+  sourceActor ??= game.actors.find(actor=>actor.getFlag(MODULE_ID,"sourceKey")===action.actorKey);
   if(!sourceActor) return ui.notifications.error("Актёр не импортирован. Обновите приключение.");
+  sourceToken ??=sourceTokenForActor(sourceActor);
   const targets=selectedTargets();
-  if(!targets.length) return ui.notifications.warn("Сначала отметьте цели токенами Foundry (клавиша T), затем нажмите действие в панели.");
-  if(!await rechargeReady(action,sourceActor)) return;
+  if(!targets.length) return ui.notifications.warn("Выберите цели токенами Foundry (клавиша T), затем нажмите действие в листе актёра.");
+  if(action.recharge && !await rechargeReady(action,sourceActor)) return;
   if(action.kind==="help") {
     const recipients=targets.filter(token=>token.document.disposition!==CONST.TOKEN_DISPOSITIONS.HOSTILE);
     if(!recipients.length) return ui.notifications.warn("Для Помощи выберите токен союзника.");
@@ -401,10 +414,9 @@ async function runMonsterAction(actionId) {
     let resolved=false;
     for(const token of targets) resolved=await saveOutcomeDialog(action,token,sourceActor,action.damage) || resolved;
     if(resolved && action.recharge) {
-      const token=sourceTokenForActor(sourceActor);
-      if(token) {
-        const state=token.getFlag(MODULE_ID,"recharge") ?? {};
-        await token.setFlag(MODULE_ID,"recharge",{...state,[action.id]:true});
+      if(sourceToken) {
+        const state=sourceToken.getFlag(MODULE_ID,"recharge") ?? {};
+        await sourceToken.setFlag(MODULE_ID,"recharge",{...state,[action.id]:true});
       }
     }
     return;
@@ -431,27 +443,42 @@ async function runMonsterAction(actionId) {
     }
   }
 }
-function actionButtons() {
-  const groups=new Map();
-  for(const action of MONSTER_ACTIONS) {
-    const actor=game.actors.find(item=>item.getFlag(MODULE_ID,"sourceKey")===action.actorKey);
-    const group=groups.get(action.actorKey)??{name:actor?.name??action.actorKey,actions:[]};
-    group.actions.push(action); groups.set(action.actorKey,group);
-  }
-  return Array.from(groups.values()).map(group=>`<div class="dobi-panel-label">${group.name}</div>${group.actions.map(action=>`<button type="button" data-auto-action="${action.id}">${action.name}</button>`).join("")}`).join("");
-}
 function renderControlPanel() {
   document.querySelector("#dobi-mik-control-panel")?.remove();
   if(!game.user.isGM || !canvas?.scene) return;
   const panel=document.createElement("section");
   panel.id="dobi-mik-control-panel";
   const isLungs=canvas.scene.getFlag(MODULE_ID,"sourceKey")==="lungs";
-  panel.innerHTML=`<header><strong>Доби Мик</strong><button type="button" data-action="collapse" aria-label="Свернуть">−</button></header><div class="dobi-panel-body"><div class="dobi-panel-label">Цикл лёгких</div><button type="button" data-action="reset" ${isLungs?"":"disabled"}>Обнулить цикл</button><button type="button" data-action="rewind" ${isLungs?"":"disabled"}>На шаг назад</button><div class="dobi-panel-label">Запустить бой</div>${Object.entries(ENCOUNTERS).map(([key,encounter])=>`<button type="button" data-encounter="${key}">${encounter.name}</button>`).join("")}<div class="dobi-panel-label">Действия по отмеченным целям</div><small>Выберите один или несколько токенов клавишей T. Урон применяется автоматически с учётом сопротивлений.</small>${actionButtons()}</div>`;
+  panel.innerHTML=`<header title="Перетащите панель мышью"><strong>Доби Мик</strong><button type="button" data-action="collapse" aria-label="Свернуть">−</button></header><div class="dobi-panel-body"><div class="dobi-panel-label">Цикл лёгких</div><button type="button" data-action="reset" ${isLungs?"":"disabled"}>Обнулить цикл</button><button type="button" data-action="rewind" ${isLungs?"":"disabled"}>На шаг назад</button><div class="dobi-panel-label">Запустить бой</div>${Object.entries(ENCOUNTERS).map(([key,encounter])=>`<button type="button" data-encounter="${key}">${encounter.name}</button>`).join("")}<small>Атаки и способности запускаются отдельно в листе соответствующего актёра.</small></div>`;
+  const positionKey=`${MODULE_ID}.panel-position`;
+  try {
+    const saved=JSON.parse(localStorage.getItem(positionKey)??"null");
+    if(saved && Number.isFinite(saved.left) && Number.isFinite(saved.top)) {
+      panel.style.left=`${Math.max(0,Math.min(window.innerWidth-panel.offsetWidth,saved.left))}px`; panel.style.top=`${Math.max(0,Math.min(window.innerHeight-38,saved.top))}px`; panel.style.right="auto";
+    }
+  } catch {}
+  const header=panel.querySelector("header");
+  header.addEventListener("pointerdown",event=>{
+    if(event.target.closest("button")) return;
+    const rect=panel.getBoundingClientRect(), startX=event.clientX, startY=event.clientY;
+    header.setPointerCapture(event.pointerId);
+    const move=moveEvent=>{
+      const left=Math.max(0,Math.min(window.innerWidth-rect.width,rect.left+moveEvent.clientX-startX));
+      const top=Math.max(0,Math.min(window.innerHeight-38,rect.top+moveEvent.clientY-startY));
+      panel.style.left=`${left}px`; panel.style.top=`${top}px`; panel.style.right="auto";
+    };
+    const finish=()=>{
+      header.removeEventListener("pointermove",move); header.removeEventListener("pointerup",finish);
+      const rect=panel.getBoundingClientRect();
+      try { localStorage.setItem(positionKey,JSON.stringify({left:rect.left,top:rect.top})); } catch {}
+    };
+    header.addEventListener("pointermove",move); header.addEventListener("pointerup",finish,{once:true});
+  });
   panel.addEventListener("click",event=>{
     const button=event.target.closest("button"); if(!button) return;
     if(button.dataset.action==="collapse") { panel.classList.toggle("collapsed"); return; }
     const action=button.dataset.action;
-    const task=action==="reset" ? resetLungs() : action==="rewind" ? rewindLungCycle() : button.dataset.encounter ? startEncounter(button.dataset.encounter) : button.dataset.autoAction ? runMonsterAction(button.dataset.autoAction) : null;
+    const task=action==="reset" ? resetLungs() : action==="rewind" ? rewindLungCycle() : button.dataset.encounter ? startEncounter(button.dataset.encounter) : null;
     if(task) void task.catch(error=>{console.error(`${MODULE_ID} | Ошибка панели управления`,error);ui.notifications.error(error.message??"Не удалось выполнить действие панели.");});
   });
   document.body.append(panel);
@@ -478,6 +505,19 @@ Hooks.once("ready", async()=>{
     await ensureMacro(PANEL_MACRO,`await game.modules.get("${MODULE_ID}").api.toggleControlPanel();`,"icons/svg/target.svg");
     ui.notifications.info(`Макрос «${PANEL_MACRO}» открывает и закрывает панель управления сценами.`);
   } catch(err) { console.error(`${MODULE_ID} | Не удалось создать макросы`,err); }
+});
+Hooks.on("dnd5e.preUseActivity",(activity)=>{
+  const actionId=activity?.getFlag?.(MODULE_ID,"automationKey") ?? activity?.item?.getFlag?.(MODULE_ID,"automationKey");
+  if(!actionId || !MONSTER_ACTIONS.some(action=>action.id===actionId)) return;
+  // The dnd5e sheet Activity is the single entry point; stop the native roll to avoid duplicate damage.
+  if(!game.user.isGM) { ui.notifications.warn("Это действие монстра запускает ведущий."); return false; }
+  const actor=activity.item?.actor;
+  const token=sourceTokenForActor(actor);
+  void runMonsterAction(actionId,actor,token).catch(error=>{
+    console.error(`${MODULE_ID} | Ошибка действия актёра`,error);
+    ui.notifications.error(error.message??"Не удалось выполнить действие монстра.");
+  });
+  return false;
 });
 Hooks.on("updateCombat",(combat,changes)=>{
   if(!("round" in changes || "turn" in changes)) return;

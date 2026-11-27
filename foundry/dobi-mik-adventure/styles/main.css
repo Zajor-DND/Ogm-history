@@ -3,6 +3,7 @@
   position: fixed;
   z-index: 1000;
   top: 5rem;
+  left: auto;
   right: 1rem;
   width: 285px;
   max-height: calc(100% - 2rem);
@@ -15,7 +16,7 @@
   box-shadow: 0 4px 18px rgba(0, 0, 0, .45);
   font: 13px/1.35 sans-serif;
 }
-#dobi-mik-control-panel header { display:flex; align-items:center; justify-content:space-between; padding:0 .15rem .35rem; }
+#dobi-mik-control-panel header { display:flex; align-items:center; justify-content:space-between; padding:0 .15rem .35rem; cursor:move; user-select:none; touch-action:none; }
 #dobi-mik-control-panel header strong { font-size: 14px; }
 #dobi-mik-control-panel button { width:100%; margin:.12rem 0; padding:.35rem .45rem; color:#ecf6f8; background:rgba(49, 93, 107, .8); border:1px solid rgba(161, 210, 221, .45); border-radius:5px; cursor:pointer; }
 #dobi-mik-control-panel button:hover:not(:disabled) { background:rgba(67, 126, 143, .95); }
@@ -23,5 +24,5 @@
 #dobi-mik-control-panel header button { width:1.7rem; height:1.7rem; margin:0; padding:0; font-size:1.15rem; }
 #dobi-mik-control-panel .dobi-panel-label { margin:.55rem .1rem .2rem; color:#9bd5e2; font-size:11px; font-weight:bold; text-transform:uppercase; letter-spacing:.06em; }
 #dobi-mik-control-panel small { display:block; margin:.15rem .1rem .35rem; color:#c8d9df; font-size:11px; }
-#dobi-mik-control-panel [data-auto-action] { text-align:left; }
+#dobi-mik-control-panel header button { cursor:pointer; }
 #dobi-mik-control-panel.collapsed .dobi-panel-body { display:none; }
