@@ -1,0 +1,2268 @@
+{
+  "version": 1,
+  "system": "dnd5e",
+  "actors": [
+    {
+      "name": "Доби Мик, молодой кашалот",
+      "type": "npc",
+      "img": "modules/dobi-mik-adventure/assets/tokens/dobi_mik.png",
+      "folder": null,
+      "system": {
+        "abilities": {
+          "str": {
+            "value": 20,
+            "proficient": 1
+          },
+          "dex": {
+            "value": 10
+          },
+          "con": {
+            "value": 18,
+            "proficient": 1
+          },
+          "int": {
+            "value": 3
+          },
+          "wis": {
+            "value": 12
+          },
+          "cha": {
+            "value": 6
+          }
+        },
+        "attributes": {
+          "ac": {
+            "flat": 16,
+            "calc": "natural"
+          },
+          "hp": {
+            "value": 168,
+            "max": 168,
+            "temp": 0,
+            "tempmax": 0,
+            "formula": "16d12 + 64"
+          },
+          "movement": {
+            "walk": 0,
+            "swim": 60,
+            "units": "ft"
+          }
+        },
+        "details": {
+          "alignment": "Без мировоззрения",
+          "cr": 8,
+          "xp": {
+            "value": 3900
+          },
+          "type": {
+            "value": "beast",
+            "subtype": ""
+          },
+          "biography": {
+            "value": "<p>Огромный зверь без мировоззрения. Хиты 168 (16к12 + 64), КД 16, плавание 60 футов. Спасброски Силы +8, Телосложения +7. Слепое зрение 60 футов, пассивное Восприятие 11.</p><p>Удержание дыхания: 30 минут. Эхолокация: пока не оглох, определяет существ в воде в радиусе 120 футов, даже невидимых. Глубоководная туша: преимущество на проверки и спасброски против захвата и сбивания с ног.</p>",
+            "public": ""
+          }
+        },
+        "traits": {
+          "size": "huge",
+          "di": {
+            "value": []
+          },
+          "dr": {
+            "value": []
+          },
+          "dv": {
+            "value": []
+          },
+          "ci": {
+            "value": []
+          },
+          "languages": {
+            "value": []
+          },
+          "senses": {
+            "darkvision": 0,
+            "blindsight": 60,
+            "tremorsense": 0,
+            "truesight": 0,
+            "units": "ft",
+            "special": "эхолокация 120 футов"
+          }
+        },
+        "skills": {}
+      },
+      "prototypeToken": {
+        "name": "Доби Мик, молодой кашалот",
+        "texture": {
+          "src": "modules/dobi-mik-adventure/assets/tokens/dobi_mik.png",
+          "scaleX": 1,
+          "scaleY": 1
+        },
+        "width": 3,
+        "height": 3,
+        "actorLink": false,
+        "displayName": 20,
+        "displayBars": 20,
+        "disposition": -1
+      },
+      "items": [
+        {
+          "name": "Укус",
+          "type": "feat",
+          "img": "icons/svg/sword.svg",
+          "system": {
+            "description": {
+              "value": "<p>Рукопашная атака +8, досягаемость 10 футов, одна цель. Попадание: 4к10 + 5 колющего урона.</p>",
+              "chat": ""
+            },
+            "activation": {
+              "type": "action",
+              "cost": 1
+            },
+            "type": {
+              "value": "monster",
+              "subtype": ""
+            },
+            "activities": {
+              "dmBiteAtk01": {
+                "_id": "dmBiteAtk01",
+                "type": "attack",
+                "name": "Укус",
+                "activation": {
+                  "type": "action",
+                  "value": 1,
+                  "condition": ""
+                },
+                "description": {
+                  "chatFlavor": ""
+                },
+                "range": {
+                  "value": 10,
+                  "units": "ft",
+                  "override": true
+                },
+                "target": {
+                  "template": {
+                    "count": "",
+                    "contiguous": false,
+                    "type": "",
+                    "size": "",
+                    "width": "",
+                    "height": "",
+                    "units": "ft"
+                  },
+                  "affects": {
+                    "count": "1",
+                    "type": "creature",
+                    "choice": false,
+                    "special": ""
+                  },
+                  "prompt": true,
+                  "override": true
+                },
+                "attack": {
+                  "ability": "str",
+                  "bonus": "8",
+                  "critical": {
+                    "threshold": 20
+                  },
+                  "flat": true,
+                  "type": {
+                    "value": "melee",
+                    "classification": "weapon"
+                  }
+                },
+                "damage": {
+                  "critical": {
+                    "bonus": ""
+                  },
+                  "includeBase": false,
+                  "parts": [
+                    {
+                      "number": 4,
+                      "denomination": 10,
+                      "bonus": "5",
+                      "types": [
+                        "piercing"
+                      ],
+                      "custom": {
+                        "enabled": false,
+                        "formula": ""
+                      },
+                      "scaling": {
+                        "mode": "",
+                        "number": 1,
+                        "formula": ""
+                      }
+                    }
+                  ]
+                },
+                "uses": {
+                  "spent": 0,
+                  "max": "",
+                  "recovery": []
+                }
+              }
+            }
+          },
+          "flags": {
+            "dobi-mik-adventure": {
+              "sourceKey": "07f9b02b7881d4dc",
+              "automationKey": "whale-bite"
+            }
+          }
+        },
+        {
+          "name": "Хвост",
+          "type": "feat",
+          "img": "icons/svg/sword.svg",
+          "system": {
+            "description": {
+              "value": "<p>Рукопашная атака +8, досягаемость 15 футов, одна цель. Попадание: 3к8 + 5 дробящего урона; цель проходит спасбросок Силы СЛ 16 или падает ничком.</p>",
+              "chat": ""
+            },
+            "activation": {
+              "type": "action",
+              "cost": 1
+            },
+            "type": {
+              "value": "monster",
+              "subtype": ""
+            },
+            "activities": {
+              "dmTailAtk001": {
+                "_id": "dmTailAtk001",
+                "type": "attack",
+                "name": "Хвост",
+                "activation": {
+                  "type": "action",
+                  "value": 1,
+                  "condition": ""
+                },
+                "description": {
+                  "chatFlavor": ""
+                },
+                "range": {
+                  "value": 15,
+                  "units": "ft",
+                  "override": true
+                },
+                "target": {
+                  "template": {
+                    "count": "",
+                    "contiguous": false,
+                    "type": "",
+                    "size": "",
+                    "width": "",
+                    "height": "",
+                    "units": "ft"
+                  },
+                  "affects": {
+                    "count": "1",
+                    "type": "creature",
+                    "choice": false,
+                    "special": ""
+                  },
+                  "prompt": true,
+                  "override": true
+                },
+                "attack": {
+                  "ability": "str",
+                  "bonus": "8",
+                  "critical": {
+                    "threshold": 20
+                  },
+                  "flat": true,
+                  "type": {
+                    "value": "melee",
+                    "classification": "weapon"
+                  }
+                },
+                "damage": {
+                  "critical": {
+                    "bonus": ""
+                  },
+                  "includeBase": false,
+                  "parts": [
+                    {
+                      "number": 3,
+                      "denomination": 8,
+                      "bonus": "5",
+                      "types": [
+                        "bludgeoning"
+                      ],
+                      "custom": {
+                        "enabled": false,
+                        "formula": ""
+                      },
+                      "scaling": {
+                        "mode": "",
+                        "number": 1,
+                        "formula": ""
+                      }
+                    }
+                  ]
+                },
+                "uses": {
+                  "spent": 0,
+                  "max": "",
+                  "recovery": []
+                }
+              },
+              "dmTailSave01": {
+                "_id": "dmTailSave01",
+                "type": "save",
+                "name": "Хвост — Сила СЛ 16 или ничком",
+                "activation": {
+                  "type": "action",
+                  "value": 1,
+                  "condition": ""
+                },
+                "description": {
+                  "chatFlavor": "Нажмите после попадания хвостом. При провале цель падает ничком."
+                },
+                "target": {
+                  "template": {
+                    "count": "",
+                    "contiguous": false,
+                    "type": "",
+                    "size": "",
+                    "width": "",
+                    "height": "",
+                    "units": "ft"
+                  },
+                  "affects": {
+                    "count": "1",
+                    "type": "creature",
+                    "choice": false,
+                    "special": ""
+                  },
+                  "prompt": true,
+                  "override": true
+                },
+                "save": {
+                  "ability": [
+                    "str"
+                  ],
+                  "bonus": "",
+                  "dc": {
+                    "calculation": "",
+                    "formula": "16"
+                  },
+                  "visible": true
+                },
+                "damage": {
+                  "onSave": "none",
+                  "parts": []
+                },
+                "uses": {
+                  "spent": 0,
+                  "max": "",
+                  "recovery": []
+                }
+              }
+            }
+          },
+          "flags": {
+            "dobi-mik-adventure": {
+              "sourceKey": "2697db55fdd2767e",
+              "automationKey": "whale-tail"
+            }
+          }
+        },
+        {
+          "name": "Таран корпуса (перезарядка 5–6)",
+          "type": "feat",
+          "img": "icons/svg/sword.svg",
+          "system": {
+            "description": {
+              "value": "<p>Кашалот проходит по прямой до 40 футов и врезается в «Текод». Все существа на палубе проходят спасбросок Ловкости СЛ 15: провал — 3к8 дробящего урона и падение ничком; успех — половина урона без падения. Первый таран пробивает корпус; второй начинает топить судно. Не чаще одного раза за раунд; предварительно телеграфировать разгон.</p>",
+              "chat": ""
+            },
+            "activation": {
+              "type": "action",
+              "cost": 1
+            },
+            "type": {
+              "value": "monster",
+              "subtype": ""
+            },
+            "activities": {
+              "dmRamSave001": {
+                "_id": "dmRamSave001",
+                "type": "save",
+                "name": "Таран корпуса — Ловкость СЛ 15",
+                "activation": {
+                  "type": "action",
+                  "value": 1,
+                  "condition": ""
+                },
+                "description": {
+                  "chatFlavor": "При провале: полный урон и ничком. При успехе: половина урона. Сначала выберите/отметьте существ на палубе; повторный таран после первого пробивает корпус."
+                },
+                "target": {
+                  "template": {
+                    "count": "",
+                    "contiguous": false,
+                    "type": "",
+                    "size": "",
+                    "width": "",
+                    "height": "",
+                    "units": "ft"
+                  },
+                  "affects": {
+                    "count": "5",
+                    "type": "creature",
+                    "choice": false,
+                    "special": ""
+                  },
+                  "prompt": true,
+                  "override": true
+                },
+                "save": {
+                  "ability": [
+                    "dex"
+                  ],
+                  "bonus": "",
+                  "dc": {
+                    "calculation": "",
+                    "formula": "15"
+                  },
+                  "visible": true
+                },
+                "damage": {
+                  "onSave": "half",
+                  "parts": [
+                    {
+                      "number": 3,
+                      "denomination": 8,
+                      "bonus": "",
+                      "types": [
+                        "bludgeoning"
+                      ],
+                      "custom": {
+                        "enabled": false,
+                        "formula": ""
+                      },
+                      "scaling": {
+                        "mode": "",
+                        "number": 1,
+                        "formula": ""
+                      }
+                    }
+                  ]
+                },
+                "uses": {
+                  "spent": 0,
+                  "max": "1",
+                  "recovery": [
+                    {
+                      "period": "recharge",
+                      "type": "recoverAll",
+                      "formula": "5"
+                    }
+                  ]
+                },
+                "consumption": {
+                  "targets": [
+                    {
+                      "type": "activityUses",
+                      "target": "",
+                      "value": "1",
+                      "scaling": {
+                        "mode": "",
+                        "formula": ""
+                      }
+                    }
+                  ],
+                  "scaling": {
+                    "allowed": false,
+                    "max": ""
+                  },
+                  "spellSlot": false
+                }
+              }
+            }
+          },
+          "flags": {
+            "dobi-mik-adventure": {
+              "sourceKey": "f921fb7db949c8fd",
+              "automationKey": "whale-ram"
+            }
+          }
+        }
+      ],
+      "flags": {
+        "dobi-mik-adventure": {
+          "sourceKey": "dobi-mik"
+        }
+      }
+    },
+    {
+      "name": "Слизистый альвеолярный хищник",
+      "type": "npc",
+      "img": "modules/dobi-mik-adventure/assets/tokens/lung_slime.png",
+      "folder": null,
+      "system": {
+        "abilities": {
+          "str": {
+            "value": 16
+          },
+          "dex": {
+            "value": 8
+          },
+          "con": {
+            "value": 18
+          },
+          "int": {
+            "value": 2
+          },
+          "wis": {
+            "value": 10
+          },
+          "cha": {
+            "value": 3
+          }
+        },
+        "attributes": {
+          "ac": {
+            "flat": 13,
+            "calc": "natural"
+          },
+          "hp": {
+            "value": 68,
+            "max": 68,
+            "temp": 0,
+            "tempmax": 0,
+            "formula": "8d8 + 32"
+          },
+          "movement": {
+            "walk": 20,
+            "climb": 20,
+            "units": "ft"
+          }
+        },
+        "details": {
+          "alignment": "Без мировоззрения",
+          "cr": 3,
+          "xp": {
+            "value": 700
+          },
+          "type": {
+            "value": "ooze",
+            "subtype": ""
+          },
+          "biography": {
+            "value": "<p>Липкая масса: проходит через пространство шириной до 1 дюйма без протискивания. Чувствительность к электричеству: получив урон электричеством, теряет реакцию до конца следующего хода. Слепое зрение 60 футов, пассивное Восприятие 10.</p>",
+            "public": ""
+          }
+        },
+        "traits": {
+          "size": "medium",
+          "di": {
+            "value": []
+          },
+          "dr": {
+            "value": [
+              "acid",
+              "bludgeoning"
+            ]
+          },
+          "dv": {
+            "value": []
+          },
+          "ci": {
+            "value": [
+              "blinded",
+              "charmed",
+              "deafened",
+              "frightened",
+              "exhaustion",
+              "prone"
+            ]
+          },
+          "languages": {
+            "value": []
+          },
+          "senses": {
+            "darkvision": 0,
+            "blindsight": 60,
+            "tremorsense": 0,
+            "truesight": 0,
+            "units": "ft",
+            "special": ""
+          }
+        },
+        "skills": {}
+      },
+      "prototypeToken": {
+        "name": "Слизистый альвеолярный хищник",
+        "texture": {
+          "src": "modules/dobi-mik-adventure/assets/tokens/lung_slime.png",
+          "scaleX": 1,
+          "scaleY": 1
+        },
+        "width": 1,
+        "height": 1,
+        "actorLink": false,
+        "displayName": 20,
+        "displayBars": 20,
+        "disposition": -1
+      },
+      "items": [
+        {
+          "name": "Удар",
+          "type": "feat",
+          "img": "icons/svg/sword.svg",
+          "system": {
+            "description": {
+              "value": "<p>Рукопашная атака +5, досягаемость 5 футов. Попадание: 2к8 + 3 дробящего и 1к6 кислотного урона.</p>",
+              "chat": ""
+            },
+            "activation": {
+              "type": "action",
+              "cost": 1
+            },
+            "type": {
+              "value": "monster",
+              "subtype": ""
+            },
+            "activities": {
+              "dmSlimeAtk001": {
+                "_id": "dmSlimeAtk001",
+                "type": "attack",
+                "name": "Удар",
+                "activation": {
+                  "type": "action",
+                  "value": 1,
+                  "condition": ""
+                },
+                "description": {
+                  "chatFlavor": ""
+                },
+                "range": {
+                  "value": 5,
+                  "units": "ft",
+                  "override": true
+                },
+                "target": {
+                  "template": {
+                    "count": "",
+                    "contiguous": false,
+                    "type": "",
+                    "size": "",
+                    "width": "",
+                    "height": "",
+                    "units": "ft"
+                  },
+                  "affects": {
+                    "count": "1",
+                    "type": "creature",
+                    "choice": false,
+                    "special": ""
+                  },
+                  "prompt": true,
+                  "override": true
+                },
+                "attack": {
+                  "ability": "str",
+                  "bonus": "5",
+                  "critical": {
+                    "threshold": 20
+                  },
+                  "flat": true,
+                  "type": {
+                    "value": "melee",
+                    "classification": "weapon"
+                  }
+                },
+                "damage": {
+                  "critical": {
+                    "bonus": ""
+                  },
+                  "includeBase": false,
+                  "parts": [
+                    {
+                      "number": 2,
+                      "denomination": 8,
+                      "bonus": "3",
+                      "types": [
+                        "bludgeoning"
+                      ],
+                      "custom": {
+                        "enabled": false,
+                        "formula": ""
+                      },
+                      "scaling": {
+                        "mode": "",
+                        "number": 1,
+                        "formula": ""
+                      }
+                    },
+                    {
+                      "number": 1,
+                      "denomination": 6,
+                      "bonus": "",
+                      "types": [
+                        "acid"
+                      ],
+                      "custom": {
+                        "enabled": false,
+                        "formula": ""
+                      },
+                      "scaling": {
+                        "mode": "",
+                        "number": 1,
+                        "formula": ""
+                      }
+                    }
+                  ]
+                },
+                "uses": {
+                  "spent": 0,
+                  "max": "",
+                  "recovery": []
+                }
+              }
+            }
+          },
+          "flags": {
+            "dobi-mik-adventure": {
+              "sourceKey": "10eb7f5c0ca2d2b1",
+              "automationKey": "slime-strike"
+            }
+          }
+        },
+        {
+          "name": "Обволакивание (перезарядка 5–6)",
+          "type": "feat",
+          "img": "icons/svg/sword.svg",
+          "system": {
+            "description": {
+              "value": "<p>Одна цель в пределах 5 футов проходит спасбросок Ловкости СЛ 13; провал — цель схвачена (СЛ высвобождения 13) и в начале своего хода получает 2к6 кислотного урона. Слизь удерживает только одну цель.</p>",
+              "chat": ""
+            },
+            "activation": {
+              "type": "action",
+              "cost": 1
+            },
+            "type": {
+              "value": "monster",
+              "subtype": ""
+            },
+            "activities": {
+              "dmEngulfSave01": {
+                "_id": "dmEngulfSave01",
+                "type": "save",
+                "name": "Обволакивание — Ловкость СЛ 13",
+                "activation": {
+                  "type": "action",
+                  "value": 1,
+                  "condition": ""
+                },
+                "description": {
+                  "chatFlavor": "При провале цель схвачена (СЛ высвобождения 13), затем получает 2к6 кислоты в начале своего хода. Слизь удерживает одну цель."
+                },
+                "target": {
+                  "template": {
+                    "count": "",
+                    "contiguous": false,
+                    "type": "",
+                    "size": "",
+                    "width": "",
+                    "height": "",
+                    "units": "ft"
+                  },
+                  "affects": {
+                    "count": "1",
+                    "type": "creature",
+                    "choice": false,
+                    "special": ""
+                  },
+                  "prompt": true,
+                  "override": true
+                },
+                "save": {
+                  "ability": [
+                    "dex"
+                  ],
+                  "bonus": "",
+                  "dc": {
+                    "calculation": "",
+                    "formula": "13"
+                  },
+                  "visible": true
+                },
+                "damage": {
+                  "onSave": "none",
+                  "parts": []
+                },
+                "uses": {
+                  "spent": 0,
+                  "max": "1",
+                  "recovery": [
+                    {
+                      "period": "recharge",
+                      "type": "recoverAll",
+                      "formula": "5"
+                    }
+                  ]
+                },
+                "consumption": {
+                  "targets": [
+                    {
+                      "type": "activityUses",
+                      "target": "",
+                      "value": "1",
+                      "scaling": {
+                        "mode": "",
+                        "formula": ""
+                      }
+                    }
+                  ],
+                  "scaling": {
+                    "allowed": false,
+                    "max": ""
+                  },
+                  "spellSlot": false
+                }
+              },
+              "dmEngulfAcid1": {
+                "_id": "dmEngulfAcid1",
+                "type": "damage",
+                "name": "Кислота в начале хода — 2к6",
+                "activation": {
+                  "type": "special",
+                  "value": 1,
+                  "condition": "В начале хода схваченной цели"
+                },
+                "damage": {
+                  "critical": {
+                    "allow": false,
+                    "bonus": ""
+                  },
+                  "parts": [
+                    {
+                      "number": 2,
+                      "denomination": 6,
+                      "bonus": "",
+                      "types": [
+                        "acid"
+                      ],
+                      "custom": {
+                        "enabled": false,
+                        "formula": ""
+                      },
+                      "scaling": {
+                        "mode": "",
+                        "number": 1,
+                        "formula": ""
+                      }
+                    }
+                  ]
+                },
+                "target": {
+                  "template": {
+                    "count": "",
+                    "contiguous": false,
+                    "stationary": false,
+                    "type": "",
+                    "size": "",
+                    "width": "",
+                    "height": "",
+                    "units": "ft"
+                  },
+                  "affects": {
+                    "count": "1",
+                    "type": "creature",
+                    "choice": false,
+                    "special": "Схваченная цель"
+                  },
+                  "prompt": true,
+                  "override": true
+                },
+                "uses": {
+                  "spent": 0,
+                  "max": "",
+                  "recovery": []
+                }
+              }
+            }
+          },
+          "flags": {
+            "dobi-mik-adventure": {
+              "sourceKey": "2a2b4132eeaa8b12",
+              "automationKey": "slime-engulf"
+            }
+          }
+        }
+      ],
+      "flags": {
+        "dobi-mik-adventure": {
+          "sourceKey": "alveolar-hunter"
+        }
+      }
+    },
+    {
+      "name": "Лёгочная пиявка",
+      "type": "npc",
+      "img": "modules/dobi-mik-adventure/assets/tokens/lung_leech.png",
+      "folder": null,
+      "system": {
+        "abilities": {
+          "str": {
+            "value": 10
+          },
+          "dex": {
+            "value": 16
+          },
+          "con": {
+            "value": 12
+          },
+          "int": {
+            "value": 3
+          },
+          "wis": {
+            "value": 12
+          },
+          "cha": {
+            "value": 5
+          }
+        },
+        "attributes": {
+          "ac": {
+            "flat": 14,
+            "calc": "natural"
+          },
+          "hp": {
+            "value": 36,
+            "max": 36,
+            "temp": 0,
+            "tempmax": 0,
+            "formula": "8d6 + 8"
+          },
+          "movement": {
+            "walk": 20,
+            "swim": 30,
+            "climb": 20,
+            "units": "ft"
+          }
+        },
+        "details": {
+          "alignment": "Без мировоззрения",
+          "cr": 1,
+          "xp": {
+            "value": 200
+          },
+          "type": {
+            "value": "aberration",
+            "subtype": ""
+          },
+          "biography": {
+            "value": "<p>Слепое зрение 30 футов, пассивное Восприятие 11. Кровосос: если пиявка начинает ход, схватив цель, та получает 1к6 колющего урона, а пиявка восстанавливает столько же хитов.</p>",
+            "public": ""
+          }
+        },
+        "traits": {
+          "size": "small",
+          "di": {
+            "value": []
+          },
+          "dr": {
+            "value": []
+          },
+          "dv": {
+            "value": []
+          },
+          "ci": {
+            "value": []
+          },
+          "languages": {
+            "value": []
+          },
+          "senses": {
+            "darkvision": 0,
+            "blindsight": 30,
+            "tremorsense": 0,
+            "truesight": 0,
+            "units": "ft",
+            "special": ""
+          }
+        },
+        "skills": {}
+      },
+      "prototypeToken": {
+        "name": "Лёгочная пиявка",
+        "texture": {
+          "src": "modules/dobi-mik-adventure/assets/tokens/lung_leech.png",
+          "scaleX": 1,
+          "scaleY": 1
+        },
+        "width": 1,
+        "height": 1,
+        "actorLink": false,
+        "displayName": 20,
+        "displayBars": 20,
+        "disposition": -1
+      },
+      "items": [
+        {
+          "name": "Укус",
+          "type": "feat",
+          "img": "icons/svg/sword.svg",
+          "system": {
+            "description": {
+              "value": "<p>Рукопашная атака +5, досягаемость 5 футов. Попадание: 1к8 + 3 колющего урона; цель схвачена (СЛ высвобождения 13). Пиявка удерживает только одну цель.</p>",
+              "chat": ""
+            },
+            "activation": {
+              "type": "action",
+              "cost": 1
+            },
+            "type": {
+              "value": "monster",
+              "subtype": ""
+            },
+            "activities": {
+              "dmLeechAtk001": {
+                "_id": "dmLeechAtk001",
+                "type": "attack",
+                "name": "Укус",
+                "activation": {
+                  "type": "action",
+                  "value": 1,
+                  "condition": ""
+                },
+                "description": {
+                  "chatFlavor": ""
+                },
+                "range": {
+                  "value": 5,
+                  "units": "ft",
+                  "override": true
+                },
+                "target": {
+                  "template": {
+                    "count": "",
+                    "contiguous": false,
+                    "type": "",
+                    "size": "",
+                    "width": "",
+                    "height": "",
+                    "units": "ft"
+                  },
+                  "affects": {
+                    "count": "1",
+                    "type": "creature",
+                    "choice": false,
+                    "special": ""
+                  },
+                  "prompt": true,
+                  "override": true
+                },
+                "attack": {
+                  "ability": "str",
+                  "bonus": "5",
+                  "critical": {
+                    "threshold": 20
+                  },
+                  "flat": true,
+                  "type": {
+                    "value": "melee",
+                    "classification": "weapon"
+                  }
+                },
+                "damage": {
+                  "critical": {
+                    "bonus": ""
+                  },
+                  "includeBase": false,
+                  "parts": [
+                    {
+                      "number": 1,
+                      "denomination": 8,
+                      "bonus": "3",
+                      "types": [
+                        "piercing"
+                      ],
+                      "custom": {
+                        "enabled": false,
+                        "formula": ""
+                      },
+                      "scaling": {
+                        "mode": "",
+                        "number": 1,
+                        "formula": ""
+                      }
+                    }
+                  ]
+                },
+                "uses": {
+                  "spent": 0,
+                  "max": "",
+                  "recovery": []
+                }
+              }
+            }
+          },
+          "flags": {
+            "dobi-mik-adventure": {
+              "sourceKey": "37080b64649a9e4a",
+              "automationKey": "leech-bite"
+            }
+          }
+        },
+        {
+          "name": "Оторвать пиявку",
+          "type": "feat",
+          "img": "icons/svg/sword.svg",
+          "system": {
+            "description": {
+              "value": "<p>Существо может действием пройти проверку Силы (Атлетика) СЛ 14, чтобы оторвать пиявку.</p>",
+              "chat": ""
+            },
+            "activation": {
+              "type": "action",
+              "cost": 1
+            },
+            "type": {
+              "value": "monster",
+              "subtype": ""
+            },
+            "activities": {
+              "dmLeechCheck01": {
+                "_id": "dmLeechCheck01",
+                "type": "check",
+                "name": "Оторвать пиявку — Атлетика СЛ 14",
+                "activation": {
+                  "type": "action",
+                  "value": 1,
+                  "condition": ""
+                },
+                "check": {
+                  "ability": "str",
+                  "associated": [
+                    "ath"
+                  ],
+                  "dc": {
+                    "calculation": "",
+                    "formula": "14"
+                  },
+                  "visible": true
+                },
+                "uses": {
+                  "spent": 0,
+                  "max": "",
+                  "recovery": []
+                }
+              }
+            }
+          },
+          "flags": {
+            "dobi-mik-adventure": {
+              "sourceKey": "f9851eb924f5172b"
+            }
+          }
+        }
+      ],
+      "flags": {
+        "dobi-mik-adventure": {
+          "sourceKey": "lung-leech"
+        }
+      }
+    },
+    {
+      "name": "Кишечный паразит",
+      "type": "npc",
+      "img": "modules/dobi-mik-adventure/assets/tokens/intestinal_parasite.png",
+      "folder": null,
+      "system": {
+        "abilities": {
+          "str": {
+            "value": 18,
+            "proficient": 1
+          },
+          "dex": {
+            "value": 12
+          },
+          "con": {
+            "value": 16,
+            "proficient": 1
+          },
+          "int": {
+            "value": 2
+          },
+          "wis": {
+            "value": 12
+          },
+          "cha": {
+            "value": 5
+          }
+        },
+        "attributes": {
+          "ac": {
+            "flat": 14,
+            "calc": "natural"
+          },
+          "hp": {
+            "value": 85,
+            "max": 85,
+            "temp": 0,
+            "tempmax": 0,
+            "formula": "10d10 + 30"
+          },
+          "movement": {
+            "walk": 30,
+            "swim": 30,
+            "units": "ft"
+          }
+        },
+        "details": {
+          "alignment": "Без мировоззрения",
+          "cr": 4,
+          "xp": {
+            "value": 1100
+          },
+          "type": {
+            "value": "monstrosity",
+            "subtype": ""
+          },
+          "biography": {
+            "value": "<p>Спасброски Силы +7, Телосложения +6. Слепое зрение 30 футов, пассивное Восприятие 11.</p>",
+            "public": ""
+          }
+        },
+        "traits": {
+          "size": "large",
+          "di": {
+            "value": []
+          },
+          "dr": {
+            "value": []
+          },
+          "dv": {
+            "value": []
+          },
+          "ci": {
+            "value": []
+          },
+          "languages": {
+            "value": []
+          },
+          "senses": {
+            "darkvision": 0,
+            "blindsight": 30,
+            "tremorsense": 0,
+            "truesight": 0,
+            "units": "ft",
+            "special": ""
+          }
+        },
+        "skills": {}
+      },
+      "prototypeToken": {
+        "name": "Кишечный паразит",
+        "texture": {
+          "src": "modules/dobi-mik-adventure/assets/tokens/intestinal_parasite.png",
+          "scaleX": 1,
+          "scaleY": 1
+        },
+        "width": 2,
+        "height": 2,
+        "actorLink": false,
+        "displayName": 20,
+        "displayBars": 20,
+        "disposition": -1
+      },
+      "items": [
+        {
+          "name": "Мультиатака",
+          "type": "feat",
+          "img": "icons/svg/sword.svg",
+          "system": {
+            "description": {
+              "value": "<p>Паразит совершает две атаки щупальцем.</p>",
+              "chat": ""
+            },
+            "activation": {
+              "type": "action",
+              "cost": 1
+            },
+            "type": {
+              "value": "monster",
+              "subtype": ""
+            },
+            "activities": {
+              "dmMultiAtk001": {
+                "_id": "dmMultiAtk001",
+                "type": "attack",
+                "name": "Щупальце — первая атака",
+                "activation": {
+                  "type": "action",
+                  "value": 1,
+                  "condition": ""
+                },
+                "description": {
+                  "chatFlavor": ""
+                },
+                "range": {
+                  "value": 10,
+                  "units": "ft",
+                  "override": true
+                },
+                "target": {
+                  "template": {
+                    "count": "",
+                    "contiguous": false,
+                    "type": "",
+                    "size": "",
+                    "width": "",
+                    "height": "",
+                    "units": "ft"
+                  },
+                  "affects": {
+                    "count": "1",
+                    "type": "creature",
+                    "choice": false,
+                    "special": ""
+                  },
+                  "prompt": true,
+                  "override": true
+                },
+                "attack": {
+                  "ability": "str",
+                  "bonus": "7",
+                  "critical": {
+                    "threshold": 20
+                  },
+                  "flat": true,
+                  "type": {
+                    "value": "melee",
+                    "classification": "weapon"
+                  }
+                },
+                "damage": {
+                  "critical": {
+                    "bonus": ""
+                  },
+                  "includeBase": false,
+                  "parts": [
+                    {
+                      "number": 2,
+                      "denomination": 8,
+                      "bonus": "4",
+                      "types": [
+                        "bludgeoning"
+                      ],
+                      "custom": {
+                        "enabled": false,
+                        "formula": ""
+                      },
+                      "scaling": {
+                        "mode": "",
+                        "number": 1,
+                        "formula": ""
+                      }
+                    }
+                  ]
+                },
+                "uses": {
+                  "spent": 0,
+                  "max": "",
+                  "recovery": []
+                }
+              },
+              "dmMultiAtk002": {
+                "_id": "dmMultiAtk002",
+                "type": "attack",
+                "name": "Щупальце — вторая атака",
+                "activation": {
+                  "type": "action",
+                  "value": 1,
+                  "condition": ""
+                },
+                "description": {
+                  "chatFlavor": ""
+                },
+                "range": {
+                  "value": 10,
+                  "units": "ft",
+                  "override": true
+                },
+                "target": {
+                  "template": {
+                    "count": "",
+                    "contiguous": false,
+                    "type": "",
+                    "size": "",
+                    "width": "",
+                    "height": "",
+                    "units": "ft"
+                  },
+                  "affects": {
+                    "count": "1",
+                    "type": "creature",
+                    "choice": false,
+                    "special": ""
+                  },
+                  "prompt": true,
+                  "override": true
+                },
+                "attack": {
+                  "ability": "str",
+                  "bonus": "7",
+                  "critical": {
+                    "threshold": 20
+                  },
+                  "flat": true,
+                  "type": {
+                    "value": "melee",
+                    "classification": "weapon"
+                  }
+                },
+                "damage": {
+                  "critical": {
+                    "bonus": ""
+                  },
+                  "includeBase": false,
+                  "parts": [
+                    {
+                      "number": 2,
+                      "denomination": 8,
+                      "bonus": "4",
+                      "types": [
+                        "bludgeoning"
+                      ],
+                      "custom": {
+                        "enabled": false,
+                        "formula": ""
+                      },
+                      "scaling": {
+                        "mode": "",
+                        "number": 1,
+                        "formula": ""
+                      }
+                    }
+                  ]
+                },
+                "uses": {
+                  "spent": 0,
+                  "max": "",
+                  "recovery": []
+                }
+              }
+            }
+          },
+          "flags": {
+            "dobi-mik-adventure": {
+              "sourceKey": "75c875d914ec6cc8",
+              "automationKey": "parasite-multi"
+            }
+          }
+        },
+        {
+          "name": "Щупальце",
+          "type": "feat",
+          "img": "icons/svg/sword.svg",
+          "system": {
+            "description": {
+              "value": "<p>Рукопашная атака +7, досягаемость 10 футов. Попадание: 2к8 + 4 дробящего урона; цель Большого размера или меньше схвачена (СЛ высвобождения 15).</p>",
+              "chat": ""
+            },
+            "activation": {
+              "type": "action",
+              "cost": 1
+            },
+            "type": {
+              "value": "monster",
+              "subtype": ""
+            },
+            "activities": {
+              "dmTentacle001": {
+                "_id": "dmTentacle001",
+                "type": "attack",
+                "name": "Щупальце",
+                "activation": {
+                  "type": "action",
+                  "value": 1,
+                  "condition": ""
+                },
+                "description": {
+                  "chatFlavor": ""
+                },
+                "range": {
+                  "value": 10,
+                  "units": "ft",
+                  "override": true
+                },
+                "target": {
+                  "template": {
+                    "count": "",
+                    "contiguous": false,
+                    "type": "",
+                    "size": "",
+                    "width": "",
+                    "height": "",
+                    "units": "ft"
+                  },
+                  "affects": {
+                    "count": "1",
+                    "type": "creature",
+                    "choice": false,
+                    "special": ""
+                  },
+                  "prompt": true,
+                  "override": true
+                },
+                "attack": {
+                  "ability": "str",
+                  "bonus": "7",
+                  "critical": {
+                    "threshold": 20
+                  },
+                  "flat": true,
+                  "type": {
+                    "value": "melee",
+                    "classification": "weapon"
+                  }
+                },
+                "damage": {
+                  "critical": {
+                    "bonus": ""
+                  },
+                  "includeBase": false,
+                  "parts": [
+                    {
+                      "number": 2,
+                      "denomination": 8,
+                      "bonus": "4",
+                      "types": [
+                        "bludgeoning"
+                      ],
+                      "custom": {
+                        "enabled": false,
+                        "formula": ""
+                      },
+                      "scaling": {
+                        "mode": "",
+                        "number": 1,
+                        "formula": ""
+                      }
+                    }
+                  ]
+                },
+                "uses": {
+                  "spent": 0,
+                  "max": "",
+                  "recovery": []
+                }
+              }
+            }
+          },
+          "flags": {
+            "dobi-mik-adventure": {
+              "sourceKey": "c76939c4a7180a19",
+              "automationKey": "parasite-multi"
+            }
+          }
+        },
+        {
+          "name": "Проглотить схваченную цель (перезарядка 6)",
+          "type": "feat",
+          "img": "icons/svg/sword.svg",
+          "system": {
+            "description": {
+              "value": "<p>Одна схваченная цель Среднего размера или меньше проходит спасбросок Ловкости СЛ 15; провал — проглочена, ослеплена и обездвижена, получает 2к6 кислотного урона в начале хода паразита. Если паразит получает 20 или более урона за один ход изнутри, он проходит спасбросок Телосложения СЛ 15 или выплёвывает проглоченных.</p>",
+              "chat": ""
+            },
+            "activation": {
+              "type": "action",
+              "cost": 1
+            },
+            "type": {
+              "value": "monster",
+              "subtype": ""
+            },
+            "activities": {
+              "dmSwallowSave1": {
+                "_id": "dmSwallowSave1",
+                "type": "save",
+                "name": "Проглотить — Ловкость СЛ 15",
+                "activation": {
+                  "type": "action",
+                  "value": 1,
+                  "condition": ""
+                },
+                "description": {
+                  "chatFlavor": "Только для схваченной цели Среднего размера или меньше. При провале цель проглочена, ослеплена и обездвижена. Для урона в начале хода паразита нажмите отдельную активность «Кислота внутри» на этой способности."
+                },
+                "target": {
+                  "template": {
+                    "count": "",
+                    "contiguous": false,
+                    "type": "",
+                    "size": "",
+                    "width": "",
+                    "height": "",
+                    "units": "ft"
+                  },
+                  "affects": {
+                    "count": "1",
+                    "type": "creature",
+                    "choice": false,
+                    "special": ""
+                  },
+                  "prompt": true,
+                  "override": true
+                },
+                "save": {
+                  "ability": [
+                    "dex"
+                  ],
+                  "bonus": "",
+                  "dc": {
+                    "calculation": "",
+                    "formula": "15"
+                  },
+                  "visible": true
+                },
+                "damage": {
+                  "onSave": "none",
+                  "parts": []
+                },
+                "uses": {
+                  "spent": 0,
+                  "max": "1",
+                  "recovery": [
+                    {
+                      "period": "recharge",
+                      "type": "recoverAll",
+                      "formula": "6"
+                    }
+                  ]
+                },
+                "consumption": {
+                  "targets": [
+                    {
+                      "type": "activityUses",
+                      "target": "",
+                      "value": "1",
+                      "scaling": {
+                        "mode": "",
+                        "formula": ""
+                      }
+                    }
+                  ],
+                  "scaling": {
+                    "allowed": false,
+                    "max": ""
+                  },
+                  "spellSlot": false
+                }
+              },
+              "dmSwallowAcid1": {
+                "_id": "dmSwallowAcid1",
+                "type": "damage",
+                "name": "Кислота внутри — 2к6",
+                "activation": {
+                  "type": "special",
+                  "value": 1,
+                  "condition": "В начале хода паразита"
+                },
+                "damage": {
+                  "onSave": "none",
+                  "parts": [
+                    {
+                      "number": 2,
+                      "denomination": 6,
+                      "bonus": "",
+                      "types": [
+                        "acid"
+                      ],
+                      "custom": {
+                        "enabled": false,
+                        "formula": ""
+                      },
+                      "scaling": {
+                        "mode": "",
+                        "number": 1,
+                        "formula": ""
+                      }
+                    }
+                  ]
+                },
+                "target": {
+                  "template": {
+                    "count": "",
+                    "contiguous": false,
+                    "type": "",
+                    "size": "",
+                    "width": "",
+                    "height": "",
+                    "units": "ft"
+                  },
+                  "affects": {
+                    "count": "1",
+                    "type": "creature",
+                    "choice": false,
+                    "special": "Проглоченная цель"
+                  },
+                  "prompt": true,
+                  "override": true
+                },
+                "uses": {
+                  "spent": 0,
+                  "max": "",
+                  "recovery": []
+                }
+              }
+            }
+          },
+          "flags": {
+            "dobi-mik-adventure": {
+              "sourceKey": "d971f10db25b2265",
+              "automationKey": "parasite-swallow"
+            }
+          }
+        }
+      ],
+      "flags": {
+        "dobi-mik-adventure": {
+          "sourceKey": "intestinal-parasite"
+        }
+      }
+    },
+    {
+      "name": "Капитан Тортуга Железноступ",
+      "type": "npc",
+      "img": "modules/dobi-mik-adventure/assets/portraits/tortuga.jpg",
+      "folder": null,
+      "system": {
+        "abilities": {
+          "str": {
+            "value": 16
+          },
+          "dex": {
+            "value": 10
+          },
+          "con": {
+            "value": 12
+          },
+          "int": {
+            "value": 10
+          },
+          "wis": {
+            "value": 14
+          },
+          "cha": {
+            "value": 13
+          }
+        },
+        "attributes": {
+          "ac": {
+            "flat": 17,
+            "calc": "natural"
+          },
+          "hp": {
+            "value": 55,
+            "max": 55,
+            "temp": 0,
+            "tempmax": 0,
+            "formula": "10d8 + 10"
+          },
+          "movement": {
+            "walk": 30,
+            "units": "ft"
+          }
+        },
+        "details": {
+          "alignment": "Без мировоззрения",
+          "cr": 2,
+          "xp": {
+            "value": 450
+          },
+          "type": {
+            "value": "humanoid (tortle)",
+            "subtype": ""
+          },
+          "biography": {
+            "value": "<p><b>Капитан и союзник.</b> Средний гуманоид (тортл), без мировоззрения. КД 17; 55 хитов (10к8 + 10); скорость 30 футов. Сила 16 (+3), Ловкость 10 (+0), Телосложение 12 (+1), Интеллект 10 (+0), Мудрость 14 (+2), Харизма 13 (+1). Спасброски и навыки не заданы. Пассивное Восприятие 12. УО 2 (450 XP), ориентировочно. КД и хиты — игровая адаптация: исходный текст называет гарпун +6 (1к10 + 4 колющего урона) и действие Помощь, но не задаёт защиту и хиты.</p><p><b>Гарпун.</b> Рукопашная атака оружием +6, досягаемость 5 футов, одна цель. Попадание: 1к10 + 4 колющего урона.</p><p><b>Помощь.</b> Помогает союзнику с проверкой, связанной с кораблём или снастями; даёт преимущество на следующую подходящую проверку. Не даёт преимущество на атаку по киту, если Тортуга не находится рядом с целью.</p><p>Тортуга не совершает мультиатаку и не побеждает кашалота вместо героев. Если он сбит с ног или спасает себя, он пропускает действие.</p>",
+            "public": ""
+          }
+        },
+        "traits": {
+          "size": "medium",
+          "di": {
+            "value": []
+          },
+          "dr": {
+            "value": []
+          },
+          "dv": {
+            "value": []
+          },
+          "ci": {
+            "value": []
+          },
+          "languages": {
+            "value": []
+          },
+          "senses": {
+            "darkvision": 0,
+            "blindsight": 0,
+            "tremorsense": 0,
+            "truesight": 0,
+            "units": "ft",
+            "special": ""
+          }
+        },
+        "skills": {}
+      },
+      "prototypeToken": {
+        "name": "Капитан Тортуга Железноступ",
+        "texture": {
+          "src": "modules/dobi-mik-adventure/assets/portraits/tortuga.jpg",
+          "scaleX": 1,
+          "scaleY": 1
+        },
+        "width": 1,
+        "height": 1,
+        "actorLink": false,
+        "displayName": 20,
+        "displayBars": 20,
+        "disposition": 1
+      },
+      "items": [
+        {
+          "name": "Гарпун",
+          "type": "feat",
+          "img": "icons/svg/sword.svg",
+          "system": {
+            "description": {
+              "value": "<p>Рукопашная атака +6. Попадание: 1к10 + 4 колющего урона.</p>",
+              "chat": ""
+            },
+            "activation": {
+              "type": "action",
+              "cost": 1
+            },
+            "type": {
+              "value": "monster",
+              "subtype": ""
+            },
+            "activities": {
+              "dmHarpoon01": {
+                "_id": "dmHarpoon01",
+                "type": "attack",
+                "name": "Гарпун",
+                "activation": {
+                  "type": "action",
+                  "value": 1,
+                  "condition": ""
+                },
+                "description": {
+                  "chatFlavor": ""
+                },
+                "range": {
+                  "value": 5,
+                  "units": "ft",
+                  "override": true
+                },
+                "target": {
+                  "template": {
+                    "count": "",
+                    "contiguous": false,
+                    "type": "",
+                    "size": "",
+                    "width": "",
+                    "height": "",
+                    "units": "ft"
+                  },
+                  "affects": {
+                    "count": "1",
+                    "type": "creature",
+                    "choice": false,
+                    "special": ""
+                  },
+                  "prompt": true,
+                  "override": true
+                },
+                "attack": {
+                  "ability": "str",
+                  "bonus": "6",
+                  "critical": {
+                    "threshold": 20
+                  },
+                  "flat": true,
+                  "type": {
+                    "value": "melee",
+                    "classification": "weapon"
+                  }
+                },
+                "damage": {
+                  "critical": {
+                    "bonus": ""
+                  },
+                  "includeBase": false,
+                  "parts": [
+                    {
+                      "number": 1,
+                      "denomination": 10,
+                      "bonus": "4",
+                      "types": [
+                        "piercing"
+                      ],
+                      "custom": {
+                        "enabled": false,
+                        "formula": ""
+                      },
+                      "scaling": {
+                        "mode": "",
+                        "number": 1,
+                        "formula": ""
+                      }
+                    }
+                  ]
+                },
+                "uses": {
+                  "spent": 0,
+                  "max": "",
+                  "recovery": []
+                }
+              }
+            }
+          },
+          "flags": {
+            "dobi-mik-adventure": {
+              "sourceKey": "d270e6f73d657fbc",
+              "automationKey": "tortuga-harpoon"
+            }
+          }
+        },
+        {
+          "name": "Помощь",
+          "type": "feat",
+          "img": "icons/svg/sword.svg",
+          "system": {
+            "description": {
+              "value": "<p>Действие Помощь для проверок, связанных с кораблём или снастями. Не даёт преимущество на атаку по киту, если Тортуга не находится рядом с целью.</p>",
+              "chat": ""
+            },
+            "activation": {
+              "type": "action",
+              "cost": 1
+            },
+            "type": {
+              "value": "monster",
+              "subtype": ""
+            }
+          },
+          "flags": {
+            "dobi-mik-adventure": {
+              "automationKey": "tortuga-help"
+            }
+          }
+        }
+      ],
+      "flags": {
+        "dobi-mik-adventure": {
+          "sourceKey": "tortuga-support"
+        }
+      }
+    }
+  ],
+  "scenes": [
+    {
+      "name": "01 — Палуба «Текода»",
+      "navigation": true,
+      "width": 1536,
+      "height": 1008,
+      "padding": 0,
+      "grid": {
+        "type": 1,
+        "size": 48,
+        "distance": 5,
+        "units": "ft"
+      },
+      "background": {
+        "src": "modules/dobi-mik-adventure/assets/maps/tekod_open_sea.jpg"
+      },
+      "ownership": {
+        "default": 2
+      },
+      "flags": {
+        "dobi-mik-adventure": {
+          "sourceKey": "deck"
+        }
+      }
+    },
+    {
+      "name": "02 — Гортань и застрявший «Текод»",
+      "navigation": true,
+      "width": 1536,
+      "height": 1008,
+      "padding": 0,
+      "grid": {
+        "type": 1,
+        "size": 48,
+        "distance": 5,
+        "units": "ft"
+      },
+      "background": {
+        "src": "modules/dobi-mik-adventure/assets/maps/throat.jpg"
+      },
+      "ownership": {
+        "default": 2
+      },
+      "flags": {
+        "dobi-mik-adventure": {
+          "sourceKey": "throat"
+        }
+      }
+    },
+    {
+      "name": "03 — Лёгкие (смена фаз)",
+      "navigation": true,
+      "width": 1530,
+      "height": 1020,
+      "padding": 0,
+      "grid": {
+        "type": 1,
+        "size": 30,
+        "distance": 5,
+        "units": "ft"
+      },
+      "background": {
+        "src": "modules/dobi-mik-adventure/assets/maps/lungs_inflated.jpg"
+      },
+      "ownership": {
+        "default": 2
+      },
+      "flags": {
+        "dobi-mik-adventure": {
+          "sourceKey": "lungs",
+          "lungsCycle": {
+            "enabled": true,
+            "inflated": "modules/dobi-mik-adventure/assets/maps/lungs_inflated.jpg",
+            "deflated": "modules/dobi-mik-adventure/assets/maps/lungs_deflated.jpg",
+            "waterline": "modules/dobi-mik-adventure/assets/lungs/waterline.png",
+            "lastRound": 0,
+            "combatId": null,
+            "waterlineTileId": null,
+            "baseWaterY": 914,
+            "raisedWaterY": 794,
+            "waterOverlay": "modules/dobi-mik-adventure/assets/lungs/water-overlay.png",
+            "waterY": 914
+          }
+        }
+      }
+    },
+    {
+      "name": "04 — Мозг и клеймо",
+      "navigation": true,
+      "width": 1536,
+      "height": 1008,
+      "padding": 0,
+      "grid": {
+        "type": 1,
+        "size": 48,
+        "distance": 5,
+        "units": "ft"
+      },
+      "background": {
+        "src": "modules/dobi-mik-adventure/assets/maps/brain.jpg"
+      },
+      "ownership": {
+        "default": 2
+      },
+      "flags": {
+        "dobi-mik-adventure": {
+          "sourceKey": "brain"
+        }
+      }
+    },
+    {
+      "name": "05 — Желудок и нервный узел",
+      "navigation": true,
+      "width": 1536,
+      "height": 1008,
+      "padding": 0,
+      "grid": {
+        "type": 1,
+        "size": 48,
+        "distance": 5,
+        "units": "ft"
+      },
+      "background": {
+        "src": "modules/dobi-mik-adventure/assets/maps/stomach.jpg"
+      },
+      "ownership": {
+        "default": 2
+      },
+      "flags": {
+        "dobi-mik-adventure": {
+          "sourceKey": "stomach"
+        }
+      }
+    },
+    {
+      "name": "06 — Сердце",
+      "navigation": true,
+      "width": 1536,
+      "height": 1008,
+      "padding": 0,
+      "grid": {
+        "type": 1,
+        "size": 48,
+        "distance": 5,
+        "units": "ft"
+      },
+      "background": {
+        "src": "modules/dobi-mik-adventure/assets/maps/heart.jpg"
+      },
+      "ownership": {
+        "default": 2
+      },
+      "flags": {
+        "dobi-mik-adventure": {
+          "sourceKey": "heart"
+        }
+      }
+    },
+    {
+      "name": "07 — Кишечник",
+      "navigation": true,
+      "width": 1536,
+      "height": 1008,
+      "padding": 0,
+      "grid": {
+        "type": 1,
+        "size": 48,
+        "distance": 5,
+        "units": "ft"
+      },
+      "background": {
+        "src": "modules/dobi-mik-adventure/assets/maps/intestine.jpg"
+      },
+      "ownership": {
+        "default": 2
+      },
+      "flags": {
+        "dobi-mik-adventure": {
+          "sourceKey": "intestine"
+        }
+      }
+    }
+  ],
+  "journals": [
+    {
+      "name": "Доби Мик — книга ведущего и сцены",
+      "pages": [
+        {
+          "name": "Книга приключения",
+          "type": "text",
+          "text": {
+            "format": 1,
+            "content": "<div class=\"dobi-book\"><p><strong>ДОБИ МИК</strong></p><p>Книга приключения для ведущего</p><p>D&amp;D 5e • 5 персонажей 6-го уровня • морской хоррор и выживание</p><p><em>Тортуга нашёл кашалота, отнявшего у него ногу.<br>Теперь кораблю предстоит пережить встречу с его матерью.</em></p><h1>Как пользоваться книгой</h1><p>Это мастерская книга ваншота о мести капитана Тортуги и побеге из тела чудовищно большого кашалота. Приключение рассчитано на пять персонажей 6-го уровня и использует базовую редакцию D&amp;D 5e 2014 года. Сюжетный источник — «Доби МИК»; здесь сцены сведены в последовательную структуру, а наброски механик превращены в готовые проверки, столкновения и последствия.</p><p>На борту «Текода» находятся только герои и Тортуга. Доби Мик — животное-чудовище, а не разумный злодей. Мать-кит тоже не разговаривает и не ведёт переговоров: её мозг и тело искажены клеймом Ктулху, которое герои могут обнаружить и попытаться снять.</p><h2>Параметры проведения</h2><table><tr><th><strong>Параметр</strong></th><th><strong>Значение</strong></th></tr><tr><td>Состав и уровень</td><td>5 персонажей 6-го уровня</td></tr><tr><td>Длительность</td><td>Один длинный игровой вечер; маршрут определяет темп</td></tr><tr><td>Тон</td><td>Морское приключение, телесный хоррор, напряжённое выживание</td></tr><tr><td>Ключевая развилка</td><td>Из гортани герои выбирают путь через лёгкие или желудок</td></tr><tr><td>Дополнительные локации</td><td>Мозг на пути к дыхалу; сердце в желудке</td></tr><tr><td>Поражение</td><td>Не обязательно означает гибель партии: ведущий может превратить его в цену спасения</td></tr><tr><td>Боевые сцены</td><td>1) Палуба: Доби Мик ×1. 2) Лёгкие: слизистые альвеолярные хищники ×2 и лёгочные пиявки ×3; все пять существ начинают преследование с 1-го раунда. 3) Кислотное море желудка: кишечные паразиты ×4; все четыре вступают в инициативу одновременно с 1-го раунда.</td></tr></table><h2>Подготовка ведущего</h2><ul><li>Прочитайте вступление и общую сцену проглатывания.</li><li>Выберите маршрут только после того, как игроки осмотрят гортань; не подсказывайте «правильную» ветку.</li><li>Подготовьте жетоны прогресса: успехи и осложнения в испытаниях удобно отмечать на листе.</li><li>Определите заранее, какой ценой герои могут спасти Тортугу и «Текод».</li><li>Статблоки чудовищ и таблицы опасностей находятся в конце книги.</li></ul><h2>Быстрый ход приключения</h2><table><tr><th><strong>Этап</strong></th><th><strong>Сцена</strong></th><th><strong>Результат</strong></th></tr><tr><td>1</td><td>Текод и приманка</td><td>Герои готовят сеть и наживку; успехи дают тактическое преимущество.</td></tr><tr><td>2</td><td>Малый кашалот</td><td>Бой с Доби Миком; Тортуга помогает, но не забирает победу у игроков.</td></tr><tr><td>3</td><td>Проглатывание</td><td>Мать-кит заглатывает судно; корабль заклинивает в гортани.</td></tr><tr><td>4А</td><td>Лёгкие → мозг → дыхало</td><td>Бой в лёгких: слизистые альвеолярные хищники ×2 и лёгочные пиявки ×3; все пять в инициативе с 1-го раунда, затем мозг (опционально) и дыхало.</td></tr><tr><td>4Б</td><td>Желудок → сердце → кишечник</td><td>Бой в кислотном море желудка: кишечные паразиты ×4, все в инициативе с 1-го раунда; затем нервный узел, сердце (опционально) и кишечник.</td></tr><tr><td>5</td><td>Финал</td><td>Герои выбираются наружу; их действия решают, освобождён ли кит от клейма.</td></tr></table><h1>Правила испытаний и опасностей</h1><p>В приключении используется групповое испытание: ведущий объявляет цель и риск, каждый игрок описывает способ помочь, затем персонажи совершают проверки. Обычно нужно набрать 4 успеха до 3 провалов. Один персонаж не может повторять один и тот же навык без нового подхода. Натуральная 1 не является автоматическим провалом проверки характеристики, но может добавить осложнение по решению ведущего.</p><table><tr><th><strong>Сложность</strong></th><th><strong>СЛ</strong></th><th><strong>Где применять</strong></th></tr><tr><td>Обычная</td><td>13</td><td>Работа с корабельными снастями, простое лазание, поиск безопасного пути.</td></tr><tr><td>Трудная</td><td>15</td><td>Опасный подъём, удержание на скользкой поверхности, быстрая реакция.</td></tr><tr><td>Очень трудная</td><td>18</td><td>Хирургия огромного органа, точная диагностика или вскрытие защищённой ткани.</td></tr></table><p>Провал испытания означает осложнение, потерю времени или урон, а не остановку приключения. Если вся группа исчерпала провалы, откройте путь ценой: потери снаряжения, разделения партии на один раунд, ранения Тортуги или старта следующей сцены с одним дополнительным препятствием.</p><h2>Дыхание, вода и кислота</h2><ul><li>В сценах лёгких и дыхала герои находятся во влажной воздушной среде; под водой применяется обычное правило задержки дыхания. Персонаж может задерживать дыхание число минут, равное 1 + модификатор Телосложения (минимум 30 секунд). Когда воздух закончился, персонаж может продержаться число раундов, равное модификатору Телосложения (минимум 1), после чего падает до 0 хитов.</li><li>Кислотная вода в желудке не требует проверки, чтобы получать урон: достаточно коснуться её. Старт раунда в кислоте — 4к6 урона кислотой; успешная проверка Ловкости (Акробатика) СЛ 14 позволяет персонажу удержаться на обломке и не попасть в воду.</li><li>Падение с высоты и принудительное перемещение применяются по обычным правилам 5e. Чтобы сохранить напряжение без внезапной гибели, заранее показывайте опасность и давайте возможность зацепиться за складки ткани, канаты или обломки.</li></ul><h1>Сцена 1. Наживка на борту «Текода»</h1><h2>Задача сцены</h2><p>Познакомить игроков с местью Тортуги, показать подготовленную приманку и дать каждому персонажу роль до боя. «Текод» в этом путешествии идёт без команды: на борту только Тортуга и герои.</p><h2>Текст для чтения</h2><p><em>С момента отплытия прошло несколько недель. Первые дни на борту «Текода» были непростыми: старый китобой скрипел досками, палуба уходила из-под ног, а солёный ветер забирался под одежду. Со временем работа стала привычной. Неизменным оставался только запах, тянувшийся из грузового трюма: гниль, тухлое мясо и что-то ещё более отвратительное.<br><br>Когда очередной порыв ветра приносит новую волну вони, Тортуга улыбается. «Почти пришли. Место то самое». Он ведёт вас в трюм. Там лежат несколько огромных туш кальмаров. «Доби Мик любит кальмаров. А ещё любит нападать на тех, кто пытается их у него отобрать. Значит, сегодня мы дадим ему шанс повторить ошибку».</em></p><h2>Механика: подготовка приманки</h2><p>Проведите испытание: 4 успеха до 3 провалов, СЛ 13. На выбор игроков: Сила (Атлетика) — поднять туши и закрепить сеть; Ловкость (Ловкость рук) — быстро обвязать туши; Мудрость (Восприятие) — выбрать место для приманки; Мудрость (Выживание) — понять направление течения; Интеллект (Природа) — предугадать поведение кашалота; проверка инструментов водного транспорта — удержать корабль в нужном положении.</p><table><tr><th><strong>Итог</strong></th><th><strong>Преимущество в следующей сцене</strong></th></tr><tr><td>4 успеха до 3 провалов</td><td>Герои замечают движение раньше: каждый получает возможность занять позицию до инициативы; первый бросок на инициативу совершается с преимуществом.</td></tr><tr><td>3 провала раньше 4 успехов</td><td>Кашалот подходит вплотную к борту; до первого хода один случайный герой должен пройти спасбросок Ловкости СЛ 13 или упасть ничком.</td></tr><tr><td>Успехи и провалы одновременно</td><td>Обычное начало боя: герои видят тень, но не получают дополнительного преимущества.</td></tr></table><h1>Сцена 2. Битва с Доби Миком</h1><h2>Начало сцены</h2><p><em>Крюки впиваются в туши кальмаров. Блоки скрипят, канаты натягиваются, и огромная сеть с наживкой уходит за корму. Проходит час. Море спокойно, небо затянуто серыми облаками. Затем вода под кораблём темнеет. Сначала это кажется тенью. Потом вы понимаете, что силуэт длиннее «Текода» и движется прямо к приманке. Сеть резко уходит вниз, раздаётся треск — и океан взрывается белой тушей, поднявшей столбы воды выше мачт. На шкуре застряли старые гарпуны. Чёрный глаз размером с телегу поворачивается к вам. Тортуга вытаскивает гарпун. «Доби Мик! Наконец-то я тебя нашёл!»</em></p><h2>Поле боя и задача</h2><p>Сражение проходит на палубе. За бортом открытая вода; сети, мачта, канаты и гарпунные блоки дают укрытие и интерактивные объекты. Победа достигается, когда Доби Мик падает до 0 хитов. Персонажи могут помогать Тортуге удерживать судно, связывать сеть вокруг кита или атаковать.</p><h2>Действия Тортуги</h2><p>Тортуга не побеждает кашалота вместо героев. В свой ход он может гарпунить кита (атака +6, попадание наносит 1к10+4 колющего урона) или действием Help помочь персонажу с проверкой, связанной с кораблём или снастями. Он не даёт преимущество на атаку по киту, если не находится рядом с целью. Если Тортуга сбит с ног или спасает себя, он пропускает действие.</p><h2>Тактика и особые правила</h2><ul><li>Кашалот стремится ударить корпус и сбить героев с палубы. Если герой оказывается за бортом, течение держит его рядом с кормой до конца его следующего хода; персонаж может вернуться действием Атлетики СЛ 13 или помощью союзника.</li><li>Сеть с тушами можно освободить действием и проверкой Силы (Атлетика) СЛ 14. При успехе Доби Мик до конца следующего раунда теряет реакцию и не может использовать «Таран корпуса».</li><li>Если герои удерживают кашалота гарпунными канатами, один герой может действием закрепить канат и проверкой Силы (Атлетика) СЛ 15 уменьшить скорость кита до 0 до конца его следующего хода.</li><li>При 0 хитов Доби Мик погибает. Его предсмертный зов вызывает мать; эта сцена не запускает второй бой на палубе.</li></ul><h2>Доби Мик, молодой кашалот</h2><table><tr><th><strong>Показатель</strong></th><th><strong>Значение</strong></th></tr><tr><td>Размер и тип</td><td>Огромный зверь, без мировоззрения</td></tr><tr><td>КД / хиты</td><td>16 / 168 (16к12 + 64)</td></tr><tr><td>Скорость</td><td>0 фт., плавание 60 фт.</td></tr><tr><td>СИЛ</td><td>20 (+5)  ЛОВ 10 (+0)  ТЕЛ 18 (+4)</td></tr><tr><td>ИНТ</td><td>3 (−4)  МДР 12 (+1)  ХАР 6 (−2)</td></tr><tr><td>Спасброски</td><td>СИЛ +8, ТЕЛ +7</td></tr><tr><td>Чувства</td><td>слепое зрение 60 фт., пассивная Восприятие 11</td></tr><tr><td>Уровень опасности</td><td>8 (3 900 XP)</td></tr></table><p>Удержание дыхания. Доби Мик может задерживать дыхание 30 минут. Эхолокация. Пока кашалот не оглох, он определяет местоположение существ в воде в радиусе 120 футов, даже если они невидимы. Глубоководная туша. Доби Мик имеет преимущество на проверки и спасброски, чтобы избежать состояния схваченный или сбитый с ног.</p><p>Действия. Мультиатака: кашалот совершает одну атаку укусом и одну атаку хвостом. Укус: рукопашная атака оружием +8, досягаемость 10 фт., одна цель. Попадание: 4к10+5 колющего урона. Хвост: рукопашная атака оружием +8, досягаемость 15 фт., одна цель. Попадание: 3к8+5 дробящего урона; цель должна пройти спасбросок Силы СЛ 16 или упасть ничком. Таран корпуса (перезарядка 5–6): кашалот проходит по прямой до 40 футов и врезается в «Текод». Все существа на палубе совершают спасбросок Ловкости СЛ 15; провал — 3к8 дробящего урона и падение ничком, успех — половина урона без падения. При первом применении корпус получает пробоину; при втором «Текод» начинает тонуть.</p><p>Баланс. Доби Мик оценивается в 3 900 XP (УО 8). Для пяти персонажей 6-го уровня это выше порога среднего столкновения (3 000 XP), но ниже порога сложного (4 500 XP). Палуба и риск падения в воду повышают фактическую опасность примерно на одну ступень; поэтому используйте Тарана корпуса не чаще одного раза за раунд и предупреждайте его телеграфом: кит уходит под воду, затем начинает разгон. </p><h1>Сцена 3. Проглатывание и гортань</h1><h2>Переход</h2><p><em>Истыканное гарпунами тело Доби Мика извивается в предсмертной судороге, а море вокруг окрашивается в красный. Из пасти вырывается низкий, почти нечеловеческий гул. На несколько секунд всё затихает. Потом вода вокруг «Текода» чернеет. Над кораблём смыкаются ряды зубов. Солнце исчезает. Судно срывается вниз, в огромное горло.<br><br>Удар прекращает падение. Нос «Текода» вонзается в мягкую стену, и корабль застревает в гортани под крутым углом. Вокруг сокращаются мышцы. Слизь стекает по стенам, а внизу, на сотню футов ниже, открывается зев пищевода. Тортуга висит на штурвале и пытается удержаться.</em></p><h2>Механика: удержаться и выбраться</h2><p>Герои должны закрепить друг друга и добраться до устойчивой складки ткани. Проведите испытание: 4 успеха до 3 провалов, СЛ 15. Подходят Атлетика, Акробатика, Выживание, Ловкость рук, инструменты водного транспорта, а также применение заклинаний, если игрок описывает конкретный эффект. Каждый провал наносит соответствующему герою 2к6 дробящего урона или уносит один предмет (на выбор игрока). Если группа провалила испытание, корабль окончательно соскальзывает, но Тортуга успевает спастись с последним персонажем; в сцену выбора они входят с 1 уровнем истощения или с потерей части снаряжения.</p><h2>Выбор маршрута</h2><p>Гортань образует развилку. Вверх уходит дыхательная труба, ведущая к лёгким и дыхалу. Вниз открывается проход в пищеварительный тракт и желудок. Игроки могут осмотреть обе стороны. Проверка Интеллекта (Природа) СЛ 13 подсказывает: верхний путь движется вместе с дыханием, нижний — с перистальтическим потоком. Ни один путь не безопасен. Мозг и сердце — дополнительные ответвления, а не обязательные цели. В приключении предусмотрены три боевые сцены: кит, лёгкие и кислотное море. После боя с китом партия выбирает один из двух внутренних маршрутов, поэтому за одно прохождение она участвует в бою в лёгких либо в желудке.</p><table><tr><th><strong>Маршрут</strong></th><th><strong>Ключевой риск</strong></th><th><strong>Возможность</strong></th></tr><tr><td>Дыхательная система</td><td>Высота, приливы воды, слизь и ранний чих</td><td>Быстрый подъём; можно обнаружить клеймо и освободить кита.</td></tr><tr><td>Пищеварительная система</td><td>Кислотное море, спазмы и поток</td><td>Можно воздействовать на нервные узлы и сердце, ослабив кита.</td></tr></table><h1>Маршрут А. Лёгкие и дыхало</h1><h2>Сцена 4А. Великое лёгкое море</h2><p><em>Дыхательное горло остаётся позади. Воздух становится влажным и тяжёлым. Проход раскрывается в колоссальную полость — лёгкие существа размером с остров. Внизу колышется тёмное внутреннее море; каждый вдох поднимает воду, каждый выдох опускает её. Стены уходят вверх, покрытые альвеолами — пузыревидными выступами от размера яблока до небольшого дома. Где-то высоко над вами виден вертикальный проход к дыхалу. В воде шевелятся рыбы, осьминоги и плавники акул.</em></p><p>Цель — подняться на 120 футов по цепочке альвеол к дыхательному проходу. Показывайте боковую карту и переключайте состояния альвеол по циклу. На вдохе альвеолы надуваются и почти соприкасаются: переходить с одной на другую можно обычным перемещением. Когда альвеолы сдуты, промежутки увеличиваются: для подъёма или прыжка нужна Атлетика либо Акробатика СЛ 15; союзник может помочь. Цикл длится три раунда: вдох и надувание; подъём воды на 20 футов; выдох и сдувание. Для продвижения нужны 3 успеха до 2 провалов на проверках Атлетики/Акробатики СЛ 15 или Природы/Восприятия СЛ 13 (прочитать ритм). При двух провалах герой срывается на выступ ниже и получает 2к6 дробящего урона.</p><table><tr><th><strong>Раунд цикла</strong></th><th><strong>Эффект</strong></th><th><strong>Проверка / последствие</strong></th></tr><tr><td>1. Вдох / надувание</td><td>Альвеолы раздуваются и почти соприкасаются; между соседними выступами можно пройти обычным перемещением.</td><td>Проверка на продвижение по групповому испытанию; отдельная проверка за сам переход не нужна.</td></tr><tr><td>2. Подъём воды</td><td>Вода поднимается на 20 футов.</td><td>Плавание без проверки; не закрепившиеся совершают спасбросок Силы СЛ 14 или их сносит на 20 футов.</td></tr><tr><td>3. Выдох / сдувание</td><td>Альвеолы сдуваются; промежутки между выступами становятся шире.</td><td>Атлетика или Акробатика СЛ 15, либо помощь союзника. Провал отмечается как провал испытания; при втором провале герой падает на выступ ниже и получает 2к6 дробящего урона.</td></tr></table><h3>Бой 2. Погоня в лёгких</h3><p>Как только герои входят в лёгкие, на них одновременно выходят пять существ: два Слизистых альвеолярных хищника и три Лёгочные пиявки. Все пятеро сразу бросают инициативу и преследуют группу с 1-го раунда; не откладывайте появление пиявок до случайного результата таблицы. Хищники перекрывают удобные переходы между альвеолами, а пиявки стараются схватить разных персонажей и не дают оторваться. Используйте два экземпляра статблока хищника и три экземпляра статблока пиявки. Бой заканчивается, когда все пять существ побеждены или герои оторвались от преследователей и продвинулись к дыхательному проходу. Цикл дыхания и подъём воды продолжаются во время боя.</p><h2>Сцена 5А. Мозг и клеймо Ктулху (опционально)</h2><p>Сосуды на стене становятся гуще и сходятся к скрытой полости. Проверка Интеллекта (Расследование) или Мудрости (Медицина) СЛ 18 обнаруживает, что необычные нервные волокна уходят в сторону мозга. Вскрытие мембраны занимает 10 минут и требует трёх успешных проверок до двух провалов: Медицина, Атлетика, Природа или Магия СЛ 18. Провал не закрывает путь: он наносит 3к6 урона выбранному участнику и вызывает всплеск телепатического шума.</p><p><em>За слоем серо-розовой плоти открывается полость размером с городской дом. В центре лежит мозг, складки которого поднимаются над вами, как холмы. Между ними вспыхивает бледно-синий свет. На поверхности выжжено чужеродное клеймо: глаз, окружённый кольцами рун и щупальцами. Ткань вокруг него почернела и не заживает. Когда вы смотрите на символ, он будто смотрит в ответ. В голове звучит далёкий шёпот; затем на миг вы видите тёмную воду, огромную тень и немигающий глаз.</em></p><h3>Три способа повлиять на клеймо</h3><table><tr><th><strong>Выбор героев</strong></th><th><strong>Условие</strong></th><th><strong>Исход</strong></th></tr><tr><td>Снять клеймо и освободить кита</td><td>3 успеха до 2 провалов; Медицина, Магия, Религия или Природа СЛ 18.</td><td>Клеймо отделяется от ткани. Кашалот приходит в себя и перестаёт целенаправленно проглатывать корабли; дальнейшие намерения существа неизвестны.</td></tr><tr><td>Уничтожить мозговой узел</td><td>Совокупно нанести 60 урона нервному ядру; КД 15, иммунитет к психическому и ядовитому урону.</td><td>Кит погибает после выхода героев или во время финала; путь становится опаснее из-за судорог.</td></tr><tr><td>Подчиниться шёпоту</td><td>Один персонаж касается знака и проходит спасбросок Мудрости СЛ 18.</td><td>Успех: клеймо гаснет на время, открывая проход. Провал: 4к6 психического урона и краткое видение; персонаж всё равно может отступить.</td></tr></table><p>Не устанавливайте в этой сцене постоянное управление персонажем или магическое подчинение кита. Шёпот предлагает силу и спасение, но не гарантирует безопасную сделку. Если группа решит уничтожить клеймо, воспринимайте это как освобождение, а не убийство существа.</p><h2>Сцена 6А. Подъём к дыхалу</h2><p>Герои входят в вертикальную трубу. Внутри кашалот готовится чихнуть: мышцы лёгких судорожно сокращаются, а вода собирается в нижней части прохода. Используйте испытание 5 успехов до 3 провалов, СЛ 15. На каждом этапе выберите или бросьте 1к20 по таблице препятствий дыхала. Один и тот же персонаж не может повторять навык подряд без нового подхода. Успех позволяет преодолеть препятствие; провал вызывает указанный урон или осложнение.</p><h1>Маршрут Б. Желудок и кишечник</h1><h2>Сцена 4Б. Кислотное море</h2><p><em>Последний участок пищевода остаётся позади, и перед вами раскрывается желудок. Стены пульсируют и блестят от прозрачной жидкости. Внизу раскинулось кислотное море, над поверхностью которого лопаются пузыри едкого пара. По нему дрейфуют обломки старых судов: шлюпки, ящики, бочки, мачты, якоря. Некоторые куски плоти ещё растворяются в кислоте. На противоположной стене мерцает сплетение нервных узлов; ниже, у слияния крупных сосудов, вы замечаете проход к сердцу.</em></p><h3>Бой 3. Засада в кислотном море</h3><p>Когда герои впервые ступают на обломки у кромки кислотного моря, из кислоты одновременно выбираются четыре Кишечных паразита. Все четыре бросают инициативу и вступают в бой с 1-го раунда. Паразиты стараются разделить группу: двое хватают персонажей щупальцами и тянут к кислоте, двое атакуют плот и вынуждают героев удерживать опору. Используйте четыре отдельных экземпляра статблока Кишечного паразита. После победы над ними группа продолжает испытание по лабиринту; отдельные броски таблицы кишечника не создают новых боёв.</p><p>Кислотное море пересекает сложный лабиринт из разобщённых бугров ткани и плавающих обломков. Несколько ветвей выглядят одинаково правдоподобно; часть заворачивает назад или заканчивается тупиком. На карте нет заранее обозначенной безопасной линии. На каждом этапе игроки выбирают следующий островок, а ведущий проводит испытание: 5 успехов до 3 провалов, СЛ 14. Каждый успех продвигает группу к западному выходу по выбранному маршруту. Подходят Атлетика, Акробатика, Выживание, Природа, инструменты плотника или водного транспорта. Провал означает ложную ветвь или неустойчивый островок: персонаж падает в кислоту и получает 4к6 урона кислотой; союзник может реакцией попытаться схватить его проверкой Атлетики СЛ 14. Ошибка не закрывает путь — она лишь добавляет провал и цену перехода.</p><h3>Нервный узел желудка</h3><p>Проверка Интеллекта (Природа или Расследование) СЛ 18 находит сфинктерный нервный узел. Проверка Мудрости (Медицина) СЛ 18 позволяет за 10 минут перерезать его так, чтобы мышцы расслабились. Нужны 3 успеха до 2 провалов; каждый участник может внести один результат. При успехе открывается проход в кишечник, и волна содержимого подхватывает героев вместе с обломком-плотом. При провале узел сжимается: все в радиусе 10 футов получают 2к6 дробящего урона, затем проверку можно повторить.</p><h2>Сцена 5Б. Сердце (опционально)</h2><p>От нервного сплетения можно прорваться к сердцу. Проверка Природы или Медицины СЛ 18 определяет безопасные промежутки между сокращениями. Если герои решают ранить орган, каждый наносит ему урон по обычным правилам, но нужен суммарный урон 50, чтобы остановить один крупный нервный импульс и облегчить путь. В конце каждого раунда сердце бьёт волной: спасбросок Силы СЛ 15, при провале герой отбрасывается на 15 футов; падение в кислоту вызывает её обычный урон. Успех разрушает часть клейма в сосудистой системе, даёт преимущество на финальное групповое испытание и ослабляет судороги. Провал испытания сам по себе не убивает группу: герои отступают к нервному узлу.</p><h2>Сцена 6Б. Сплав по кишечнику</h2><p>После раскрытия сфинктера группа собирает плот из обломков и плывёт по потоку. Проведите испытание: 6 успехов до 3 провалов, СЛ 14. В начале каждого раунда выберите препятствие из таблицы кишечника или бросьте 1к20. Игроки описывают решение, затем один персонаж делает основную проверку, остальные помогают. Подходят Атлетика, Акробатика, Выживание, Природа, инструменты водного транспорта и подходящие заклинания.</p><p>При провале плот теряет часть опоры; все на нём совершают спасбросок Ловкости СЛ 14. Провал — 2к6 дробящего урона и падение за борт; союзник может помочь действием. Если группа набрала 3 провала, поток всё равно выносит их к финалу, но персонажи прибывают разрозненными и получают по 2к6 урона. Повторный провал не должен запирать сцену.</p><h1>Сцена 7. Выход и финал</h1><h2>Путь через дыхало</h2><p>После последнего препятствия проход раскрывается наружу. Кашалот делает судорожный вдох. Чтобы не сорваться обратно, каждый персонаж проходит спасбросок Силы или Ловкости СЛ 15. Другой герой может потратить реакцию, чтобы удержать его (Атлетика СЛ 14). Затем кашалот чихает, выбрасывая героев наружу вместе с водой и слизью. Провал спасброска означает 3к6 дробящего урона при ударе о воду; герой всё равно выходит наружу.</p><h2>Путь через кишечник</h2><p>Поток ускоряется. На финальном спазме герои закрепляются на плоту и проходят групповое испытание: 3 успеха до 2 провалов, СЛ 15. Подходят Атлетика, Акробатика, Выживание, инструменты водного транспорта и заклинания, создающие опору или защищающие от движения. При успехе плот выносит группу наружу. При провале герои выбираются, но часть снаряжения и добычи теряется; любой персонаж может получить 3к6 дробящего урона.</p><h2>Финальная сцена</h2><p><em>Свет сначала кажется далёким огоньком. Потом он разрастается, и за ним открывается океан. Мышцы сжимаются в последний раз, поток ускоряется — и вас выталкивает наружу. Вы падаете в холодную воду среди пены, слизи и обломков. «Текод» всплывает неподалёку, искалеченный, но ещё держащийся на воде. Тортуга поднимает голову и хрипло смеётся. На горизонте поднимается огромная белая спина. Кашалот всё ещё жив — если только вы не лишили его сердца или мозга.</em></p><p>Если клеймо было снято, кит уходит в глубину и больше не преследует «Текод». Если герои уничтожили мозговой узел или сердце, гигантское тело начинает медленно погружаться; группе нужно отойти от него и вернуться на судно. Если герои не вмешивались в клеймо, кит остаётся под влиянием чужой воли, но не атакует автоматически: его дальнейшее поведение — крючок для продолжения кампании.</p><p>Тортуга благодарит героев и признаёт, что сам бы не выбрался. Если в кампании действует клан Вобода, капитан может выполнить особое условие контракта и стать союзником клана.</p><h1>Таблица препятствий дыхала</h1><p>Бросайте 1к20 за каждое продвижение испытания или выбирайте пункт, подходящий текущему темпу. Один пункт — одно препятствие; ведущий описывает его, группа предлагает решения, затем совершает одну основную проверку.</p><table><tr><th><strong>к20</strong></th><th><strong>Препятствие</strong></th><th><strong>Решение и эффект</strong></th></tr><tr><td>1</td><td>Слизистый обвал</td><td>Атлетика или Акробатика СЛ 15; провал — 2к6 дробящего урона.</td></tr><tr><td>2</td><td>Судорожный спазм</td><td>Спасбросок Ловкости СЛ 15; провал — 2к6 дробящего урона и падение ничком.</td></tr><tr><td>3</td><td>Водяной вал</td><td>Спасбросок Силы СЛ 14; провал — сносит на 20 футов назад.</td></tr><tr><td>4</td><td>Лопнувшая альвеола</td><td>Спасбросок Ловкости СЛ 14; провал — 2к6 урона кислотой.</td></tr><tr><td>5</td><td>Нервный разряд</td><td>Спасбросок Ловкости СЛ 14; провал — 2к6 урона электричеством.</td></tr><tr><td>6</td><td>Липкая альвеола</td><td>Проверка Атлетики или Акробатики СЛ 14; провал — персонаж теряет 10 футов высоты. Не начинает отдельный бой.</td></tr><tr><td>7</td><td>Скользкий склон</td><td>Акробатика СЛ 14; провал — теряется высота, нужно новое усилие.</td></tr><tr><td>8</td><td>Кашель</td><td>Все совершают спасбросок Силы СЛ 14; провал — 2к6 дробящего урона и сносит назад.</td></tr><tr><td>9</td><td>Застрявший кальмар</td><td>Атлетика СЛ 15, чтобы сдвинуть тушу; Природа СЛ 15, чтобы найти обход.</td></tr><tr><td>10</td><td>Сужение дыхала</td><td>Акробатика СЛ 15; крупному существу нужна помощь союзника.</td></tr><tr><td>11</td><td>Фонтан мокроты</td><td>Спасбросок Ловкости СЛ 14; провал — 2к6 урона кислотой.</td></tr><tr><td>12</td><td>Пульсирующий нарост</td><td>Атлетика или Акробатика СЛ 15; провал — теряется один успех испытания.</td></tr><tr><td>13</td><td>Водоворот</td><td>Атлетика СЛ 15; провал — сносит к стене, 2к6 дробящего урона.</td></tr><tr><td>14</td><td>Потерянный гарпун</td><td>Ловкость рук или Инструменты СЛ 14; успех даёт верёвку, преимущество на следующую проверку.</td></tr><tr><td>15</td><td>Стая лёгочных рыб</td><td>Акробатика или Природа СЛ 14; провал — 2к6 колющего урона.</td></tr><tr><td>16</td><td>Разрыв ткани</td><td>Акробатика СЛ 15 или Атлетика СЛ 15, чтобы перепрыгнуть расщелину.</td></tr><tr><td>17</td><td>Кровяной выброс</td><td>Спасбросок Ловкости СЛ 14; провал — ослеплён до конца следующего хода.</td></tr><tr><td>18</td><td>Судорожное дыхание</td><td>Выживание или Природа СЛ 15, чтобы выбрать момент; провал — сносит на 20 футов назад.</td></tr><tr><td>19</td><td>Корабельный обломок</td><td>Расследование или Атлетика СЛ 14; успешный проход даёт укрытие от следующего выброса.</td></tr><tr><td>20</td><td>Преждевременный чих</td><td>Начинается финальная погоня водой; испытание завершается немедленно, но каждый делает спасбросок Силы СЛ 15 или получает 3к6 дробящего урона.</td></tr></table><h1>Таблица препятствий кишечника</h1><p>Для каждого препятствия бросьте к20. Основная проверка обычно СЛ 14; СЛ 15 требуется для опасных физических манёвров. При провале примените урон/последствие и продвиньте сцену дальше.</p><table><tr><th><strong>к20</strong></th><th><strong>Препятствие</strong></th><th><strong>Решение и эффект</strong></th></tr><tr><td>1</td><td>Кишечный спазм</td><td>Атлетика СЛ 15; провал — 2к6 дробящего урона всем на плоту.</td></tr><tr><td>2</td><td>Водоворот</td><td>Выживание или Атлетика СЛ 14; провал — плот разворачивает, теряется раунд.</td></tr><tr><td>3</td><td>Застрявший якорь</td><td>Ловкость рук или Атлетика СЛ 14; провал — 2к6 дробящего урона.</td></tr><tr><td>4</td><td>Кислотный выброс</td><td>Спасбросок Ловкости СЛ 14; провал — 3к6 урона кислотой.</td></tr><tr><td>5</td><td>Останки кальмара</td><td>Атлетика СЛ 14 или Акробатика СЛ 15; провал — плот повреждён.</td></tr><tr><td>6</td><td>Куча костей</td><td>Акробатика СЛ 14; провал — 2к6 колющего урона.</td></tr><tr><td>7</td><td>Завал из обломков</td><td>Атлетика или Акробатика СЛ 15; провал — плот повреждён, но может продолжить путь. Не начинает отдельный бой.</td></tr><tr><td>8</td><td>Пузырь газа</td><td>Природа СЛ 14, чтобы заметить; провал — взрыв наносит 3к6 урона огнём.</td></tr><tr><td>9</td><td>Остов корабля</td><td>Расследование или Выживание СЛ 14; провал — группа разъединена до конца следующего раунда.</td></tr><tr><td>10</td><td>Слизистая волна</td><td>Спасбросок Силы СЛ 14; провал — ослеплён и сбит с ног.</td></tr><tr><td>11</td><td>Кишечный изгиб</td><td>Атлетика СЛ 14 для разворота плота; провал — 2к6 дробящего урона.</td></tr><tr><td>12</td><td>Металлический дождь</td><td>Спасбросок Ловкости СЛ 14; провал — 2к6 дробящего урона.</td></tr><tr><td>13</td><td>Живой затор</td><td>Атлетика СЛ 15 или Природа СЛ 15; провал — поток срывает героя с плота.</td></tr><tr><td>14</td><td>Обратная волна</td><td>Выживание СЛ 14; провал — теряется один успех испытания.</td></tr><tr><td>15</td><td>Колония паразитов</td><td>Спасбросок Ловкости СЛ 14; провал — 2к6 колющего урона от мелких паразитов. Это опасность среды, не отдельный бой и не дополнительный экземпляр статблока.</td></tr><tr><td>16</td><td>Разрыв ткани</td><td>Атлетика или Акробатика СЛ 15; провал — затягивает в рану, союзник может вытащить действием.</td></tr><tr><td>17</td><td>Костяная арка</td><td>Акробатика СЛ 14; провал — 2к6 дробящего урона.</td></tr><tr><td>18</td><td>Газовый карман</td><td>Природа СЛ 15; при провале огонь вызывает взрыв 3к6 урона огнём.</td></tr><tr><td>19</td><td>Переваренный корабль</td><td>Атлетика или Выживание СЛ 14; успех — найти прочную доску и дать группе преимущество на следующий бросок.</td></tr><tr><td>20</td><td>Финальный спазм</td><td>Сразу переходите к финальному испытанию; все совершают спасбросок Ловкости СЛ 15, провал — 3к6 дробящего урона.</td></tr></table><h1>Статблоки прочих существ</h1><h2>Слизистый альвеолярный хищник</h2><table><tr><th><strong>Показатель</strong></th><th><strong>Значение</strong></th></tr><tr><td>Размер и тип</td><td>Средняя слизь, без мировоззрения</td></tr><tr><td>КД / хиты</td><td>13 / 68 (8к8 + 32)</td></tr><tr><td>Скорость</td><td>20 фт., лазание 20 фт.</td></tr><tr><td>СИЛ</td><td>16 (+3)  ЛОВ 8 (−1)  ТЕЛ 18 (+4)</td></tr><tr><td>ИНТ</td><td>2 (−4)  МДР 10 (+0)  ХАР 3 (−4)</td></tr><tr><td>Сопротивления</td><td>кислота; дробящий урон от немагических атак</td></tr><tr><td>Иммунитеты</td><td>состояния ослеплённый, очарованный, оглохший, испуганный, истощённый, сбитый с ног</td></tr><tr><td>Чувства</td><td>слепое зрение 60 фт., пассивная Восприятие 10</td></tr><tr><td>Уровень опасности</td><td>3 (700 XP)</td></tr></table><p>Липкая масса. Существо может проходить через пространство шириной до 1 дюйма без протискивания. Чувствительность к электричеству. Получив урон электричеством, слизь теряет реакцию до конца следующего хода. Действия: Удар (рукопашная атака +5, досягаемость 5 фт.; попадание 2к8+3 дробящего урона плюс 1к6 кислотой). Обволакивание (перезарядка 5–6): одно существо в пределах 5 футов совершает спасбросок Ловкости СЛ 13; провал — схвачено (СЛ высвобождения 13), в начале своего хода получает 2к6 кислотного урона. Слизь может обволакивать только одну цель.</p><h2>Лёгочная пиявка</h2><table><tr><th><strong>Показатель</strong></th><th><strong>Значение</strong></th></tr><tr><td>Размер и тип</td><td>Маленькая аберрация, без мировоззрения</td></tr><tr><td>КД / хиты</td><td>14 / 36 (8к6 + 8)</td></tr><tr><td>Скорость</td><td>20 фт., плавание 30 фт., лазание 20 фт.</td></tr><tr><td>СИЛ</td><td>10 (+0)  ЛОВ 16 (+3)  ТЕЛ 12 (+1)</td></tr><tr><td>ИНТ</td><td>3 (−4)  МДР 12 (+1)  ХАР 5 (−3)</td></tr><tr><td>Чувства</td><td>слепое зрение 30 фт., пассивная Восприятие 11</td></tr><tr><td>Уровень опасности</td><td>1 (200 XP)</td></tr></table><p>Кровосос. Если пиявка начинает ход, схватив цель, цель получает 1к6 колющего урона, а пиявка восстанавливает столько же хитов. Действия: Укус (атака +5, досягаемость 5 фт.; попадание 1к8+3 колющего урона и цель схвачена, СЛ высвобождения 13). Пиявка может удерживать только одну цель. Действием персонаж может оторвать её проверкой Силы (Атлетика) СЛ 14.</p><h2>Кишечный паразит</h2><table><tr><th><strong>Показатель</strong></th><th><strong>Значение</strong></th></tr><tr><td>Размер и тип</td><td>Большое чудовище, без мировоззрения</td></tr><tr><td>КД / хиты</td><td>14 / 85 (10к10 + 30)</td></tr><tr><td>Скорость</td><td>30 фт., плавание 30 фт.</td></tr><tr><td>СИЛ</td><td>18 (+4)  ЛОВ 12 (+1)  ТЕЛ 16 (+3)</td></tr><tr><td>ИНТ</td><td>2 (−4)  МДР 12 (+1)  ХАР 5 (−3)</td></tr><tr><td>Спасброски</td><td>СИЛ +7, ТЕЛ +6</td></tr><tr><td>Чувства</td><td>слепое зрение 30 фт., пассивная Восприятие 11</td></tr><tr><td>Уровень опасности</td><td>4 (1 100 XP)</td></tr></table><p>Действия: Мультиатака — две атаки щупальцем. Щупальце (атака +7, досягаемость 10 фт.; попадание 2к8+4 дробящего урона; цель Большого размера или меньше схвачена, СЛ высвобождения 15). Проглотить схваченную цель (перезарядка 6): одна цель Среднего размера или меньше совершает спасбросок Ловкости СЛ 15; провал — проглочена, ослеплена и обездвижена, получает 2к6 кислотного урона в начале хода паразита. Если паразит получает 20 или более урона за один ход изнутри, он должен пройти спасбросок Телосложения СЛ 15 или выплюнуть всех проглоченных.</p><h2>Капитан Тортуга Железноступ</h2><p>Союзник партии. Этот блок оформляет Тортугу для инициативы и автоматизации. В исходном приключении указаны гарпун и действие Помощь; остальные значения уже использованы в актёре Foundry. КД 17 и 55 хитов — адаптация для игры, их можно скорректировать.</p><table><tr><th>Показатель</th><th>Значение</th></tr><tr><td>Размер и тип</td><td>Средний гуманоид (тортл), без мировоззрения</td></tr><tr><td>КД / хиты</td><td>17 / 55 (10к8 + 10)</td></tr><tr><td>Скорость</td><td>30 фт.</td></tr><tr><td>СИЛ / ЛОВ / ТЕЛ</td><td>16 (+3) / 10 (+0) / 12 (+1)</td></tr><tr><td>ИНТ / МДР / ХАР</td><td>10 (+0) / 14 (+2) / 13 (+1)</td></tr><tr><td>Спасброски</td><td>—</td></tr><tr><td>Навыки</td><td>—</td></tr><tr><td>Чувства</td><td>пассивное Восприятие 12</td></tr><tr><td>Языки</td><td>—</td></tr><tr><td>Уровень опасности</td><td>2 (450 XP), ориентировочно</td></tr></table><h3>Действия</h3><p><strong>Гарпун. </strong>Рукопашная атака оружием: +6 к попаданию, досягаемость 5 фт., одна цель. Попадание: 1к10 + 4 колющего урона.</p><p><strong>Помощь. </strong>Тортуга помогает союзнику с проверкой, связанной с кораблём или снастями. Союзник получает преимущество на следующую подходящую проверку. Это действие не даёт преимущества на атаку по киту, если Тортуга не находится рядом с целью.</p><p>В бою Тортуга занимает место в инициативе, но не совершает мультиатаку и не забирает у игроков победу над Доби Миком. Если он сбит с ног или занят спасением себя, он пропускает действие.</p><h1>Режим облегчения и усиления</h1><table><tr><th><strong>Если партия…</strong></th><th><strong>Изменение</strong></th></tr><tr><td>Сильно истощена после предыдущего приключения</td><td>Снизьте хиты Доби Мика до 140; Тортуга может один раз за бой дать преимущество сразу двум персонажам.</td></tr><tr><td>Сильная и оптимизированная</td><td>У Доби Мика 190 хитов; количество существ в трёх боевых сценах не меняется. Внутренние враги действуют тактически слаженно, но все начинают бой одновременно по указанному составу.</td></tr><tr><td>Теряет темп в испытаниях</td><td>После каждого второго провала дайте заметный безопасный путь, который стоит 2к6 урона одному персонажу.</td></tr><tr><td>Упирается в невозможность пройти дальше</td><td>Откройте путь ценой снаряжения, хитов или судьбы «Текода»; не блокируйте развилку.</td></tr></table><h1>Памятка ведущему</h1><ul><li>Не превращайте кита в злодея, который специально охотится на героев: он действует как огромное животное под чужим воздействием.</li><li>Сделайте выбор маршрута реальным. Каждый путь опасен по-своему и приводит к финалу.</li><li>Клеймо и сердце — дополнительные сцены, не обязательные условия побега.</li><li>Показывайте опасность перед уроном: волна воды, вздутая альвеола, треск плота, пар кислотного пузыря.</li><li>Оставьте Тортуге значимую роль, но дайте игрокам самим решить исход боя и спасения.</li></ul><h2>Краткая шпаргалка</h2><p>Для группы из пяти персонажей 6-го уровня ориентиры сложности по XP: лёгкое столкновение — 1 500 XP, среднее — 3 000 XP, сложное — 4 500 XP, смертельно опасное — 7 000 XP. Эти значения оценивают бой; опасный рельеф или постоянный урон среды могут повысить его фактическую сложность.</p><table><tr><th><strong>Момент</strong></th><th><strong>Что отслеживать</strong></th><th><strong>Что делать при провале</strong></th></tr><tr><td>Приманка</td><td>4 успеха до 3 провалов, СЛ 13</td><td>Начать бой в невыгодной позиции.</td></tr><tr><td>Доби Мик</td><td>168 хитов; таран телеграфировать заранее</td><td>Падение за борт или пробоина в корпусе.</td></tr><tr><td>Гортань</td><td>4 успеха до 3 провалов, СЛ 15</td><td>Урон, потеря снаряжения или осложнение.</td></tr><tr><td>Лёгкие</td><td>Бой 2: хищники ×2 + пиявки ×3, все с 1-го раунда; цикл воды +20 фт. каждый раунд</td><td>Сносит вниз, наносит дробящий урон.</td></tr><tr><td>Желудок</td><td>Бой 3: кишечные паразиты ×4 с 1-го раунда; кислота 4к6; нервный узел СЛ 18</td><td>Плот повреждён, герой падает в кислоту.</td></tr><tr><td>Выход</td><td>Один финальный групповой бросок</td><td>Герои всё равно выходят, но платят уроном/снаряжением.</td></tr></table><h2>Правила и расчёт столкновения</h2><p>Пороговые значения столкновений и правила задержки дыхания сверены с материалами D&amp;D 5e 2014 и официальной редакцией Errata. Страницы: https://www.dndbeyond.com/sources/dnd/basic-rules-2014/building-combat-encounters и https://www.dndbeyond.com/sources/dnd/sae/players-handbook-2014</p><h1>Полный текст для чтения игрокам</h1><p>Ниже собраны повествовательные фрагменты из исходного документа «Доби МИК». Проверки, СЛ, правила и указания ведущему сюда не включены. Текст разделён по сценам и может зачитываться целиком или частями. Описания случайных препятствий даны как короткие фразы для произнесения при их появлении.</p><h2>Начало и наживка</h2><blockquote><p><em>С момента отплытия прошло уже несколько недель.</em></p></blockquote><blockquote><p><em>Первые дни на борту «Текода» были непростыми. Старый китобоец скрипел всеми своими досками, палуба постоянно уходила из-под ног, а солёный ветер безжалостно забирался под одежду даже в самые тёплые дни.</em></p></blockquote><blockquote><p><em>Но время шло.</em></p></blockquote><blockquote><p><em>Те из вас, кто уже ходил в море вместе с капитаном Тортугой во время путешествия к Форту Мейнваген, быстро вспомнили старые навыки. Под руководством тортла управление кораблём вновь стало привычным делом. Подтянуть канат, поставить парус, удержать штурвал на волне — всё это давно перестало казаться чем-то необычным.</em></p></blockquote><blockquote><p><em>Те же, кто оказался в подобном плавании впервые, тоже не остались без дела.</em></p></blockquote><blockquote><p><em>Тортуга не терпел бездельников.</em></p></blockquote><blockquote><p><em>Очень быстро новички научились различать снасти, вязать морские узлы, работать с парусами и не падать за борт при каждом сильном порыве ветра.</em></p></blockquote><blockquote><p><em>Плавание постепенно превратилось в рутину.</em></p></blockquote><blockquote><p><em>Вот только одна вещь не давала покоя всей команде.</em></p></blockquote><blockquote><p><em>Вонь.</em></p></blockquote><blockquote><p><em>Отвратительная.</em></p></blockquote><blockquote><p><em>Удушающая.</em></p></blockquote><blockquote><p><em>Проникающая буквально повсюду.</em></p></blockquote><blockquote><p><em>Она тянулась из грузового трюма с самого первого дня путешествия.</em></p></blockquote><blockquote><p><em>Поначалу казалось, что это просто запах старого китобойца. Потом — что где-то внизу испортились запасы. Но чем дальше корабль уходил в море, тем сильнее становилась эта мерзкая вонь.</em></p></blockquote><blockquote><p><em>Запах гнили.</em></p></blockquote><blockquote><p><em>Тухлого мяса.</em></p></blockquote><blockquote><p><em>И чего-то ещё...</em></p></blockquote><blockquote><p><em>Чего-то настолько отвратительного, что даже морские птицы старались держаться подальше от корабля.</em></p></blockquote><blockquote><p><em>Когда очередной порыв ветра приносит на палубу новую волну зловония, Тортуга, стоявший у штурвала, неожиданно расплывается в довольной улыбке.</em></p></blockquote><blockquote><p><em>— Почти пришли.</em></p></blockquote><blockquote><p><em>Он смотрит на горизонт.</em></p></blockquote><blockquote><p><em>— Место то самое.</em></p></blockquote><blockquote><p><em>Капитан медленно поворачивается к вам и несколько секунд молчит.</em></p></blockquote><blockquote><p><em>После чего хлопает огромной лапой по борту.</em></p></blockquote><blockquote><p><em>— Ну что, помощнички. Пора познакомиться с нашей наживкой.</em></p></blockquote><blockquote><p><em>Не дожидаясь ответа, Тортуга начинает спускаться в трюм.</em></p></blockquote><blockquote><p><em>Когда вы следуете за ним, источник запаха наконец становится очевиден.</em></p></blockquote><blockquote><p><em>В глубине трюма лежат несколько чудовищных туш.</em></p></blockquote><blockquote><p><em>Огромные кальмары.</em></p></blockquote><blockquote><p><em>Каждый длиной с небольшую лодку.</em></p></blockquote><blockquote><p><em>Их тела уже начали разлагаться под жарким солнцем и морской солью. Местами плоть вздулась пузырями, местами обнажились белые полосы мяса. Вокруг лениво кружат мухи, каким-то образом сумевшие пережить всё путешествие.</em></p></blockquote><blockquote><p><em>Даже находиться рядом тяжело.</em></p></blockquote><blockquote><p><em>Тортуга, однако, выглядит довольным.</em></p></blockquote><blockquote><p><em>— Свежачок.</em></p></blockquote><blockquote><p><em>Он пинает одну из туш ногой.</em></p></blockquote><blockquote><p><em>Туша издаёт влажный чавкающий звук.</em></p></blockquote><blockquote><p><em>— Доби Мик любит кальмаров.</em></p></blockquote><blockquote><p><em>Тортуга кладёт лапу на гарпун, закреплённый у стены.</em></p></blockquote><blockquote><p><em>— А ещё он любит нападать на тех, кто пытается их у него отобрать.</em></p></blockquote><blockquote><p><em>На лице старого тортла появляется хищная улыбка.</em></p></blockquote><blockquote><p><em>— Значит сегодня мы дадим ему шанс повторить ошибку.</em></p></blockquote><h2>Битва на палубе: появление Доби Мика</h2><blockquote><p><em>Под руководством Тортуги работа начинается быстро и без лишних разговоров.</em></p></blockquote><blockquote><p><em>Крюки впиваются в туши кальмаров.</em></p></blockquote><blockquote><p><em>Блоки натужно скрипят.</em></p></blockquote><blockquote><p><em>Канаты стонут под весом добычи.</em></p></blockquote><blockquote><p><em>Одна за другой огромные туши переваливаются через борт и с тяжёлым всплеском исчезают в воде.</em></p></blockquote><blockquote><p><em>Вскоре за кормой корабля тянется широкая сеть, нагруженная смердящей приманкой.</em></p></blockquote><blockquote><p><em>Запах становится ещё хуже.</em></p></blockquote><blockquote><p><em>Настолько хуже, что некоторые из вас предпочли бы оказаться рядом с деревенским нужником, чем стоять сейчас на палубе.</em></p></blockquote><blockquote><p><em>Тортуга, наоборот, выглядит довольным.</em></p></blockquote><blockquote><p><em>— Теперь ждём.</em></p></blockquote><blockquote><p><em>Проходит час.</em></p></blockquote><blockquote><p><em>Море спокойно.</em></p></blockquote><blockquote><p><em>Небо затянуто серыми облаками.</em></p></blockquote><blockquote><p><em>Лишь мерный скрип корпуса и плеск волн нарушают тишину.</em></p></blockquote><blockquote><p><em>А затем один из вас замечает движение.</em></p></blockquote><blockquote><p><em>Там.</em></p></blockquote><blockquote><p><em>Под водой.</em></p></blockquote><blockquote><p><em>Сначала кажется, что это просто тень.</em></p></blockquote><blockquote><p><em>Большая рыба.</em></p></blockquote><blockquote><p><em>Возможно косяк.</em></p></blockquote><blockquote><p><em>Но уже через несколько секунд становится ясно — это не рыба.</em></p></blockquote><blockquote><p><em>И не косяк.</em></p></blockquote><blockquote><p><em>Слишком большое.</em></p></blockquote><blockquote><p><em>Тень медленно скользит под поверхностью моря.</em></p></blockquote><blockquote><p><em>Она движется прямо к приманке.</em></p></blockquote><blockquote><p><em>Прямо к кораблю.</em></p></blockquote><blockquote><p><em>С каждым мгновением силуэт становится всё отчётливее.</em></p></blockquote><blockquote><p><em>И всё больше.</em></p></blockquote><blockquote><p><em>Гораздо больше.</em></p></blockquote><blockquote><p><em>В какой-то момент приходит осознание.</em></p></blockquote><blockquote><p><em>Размер этой штуки невозможно правильно оценить взглядом.</em></p></blockquote><blockquote><p><em>Разум просто отказывается принимать увиденное.</em></p></blockquote><blockquote><p><em>Силуэт под водой длиннее «Текода».</em></p></blockquote><blockquote><p><em>Значительно длиннее.</em></p></blockquote><blockquote><p><em>Он занимает собой огромный участок моря под кораблём.</em></p></blockquote><blockquote><p><em>Тень продолжает приближаться.</em></p></blockquote><blockquote><p><em>И внезапно вода вокруг приманки начинает бурлить.</em></p></blockquote><blockquote><p><em>Будто под поверхностью заработал гигантский водоворот.</em></p></blockquote><blockquote><p><em>Канаты натягиваются.</em></p></blockquote><blockquote><p><em>Сеть резко уходит вниз.</em></p></blockquote><blockquote><p><em>Раздаётся оглушительный треск.</em></p></blockquote><blockquote><p><em>А затем океан взрывается.</em></p></blockquote><blockquote><p><em>Из воды вырывается колоссальная белая туша.</em></p></blockquote><blockquote><p><em>Столбы воды поднимаются выше мачт.</em></p></blockquote><blockquote><p><em>На короткое мгновение вы видите его целиком.</em></p></blockquote><blockquote><p><em>Белая кожа, покрытая старыми шрамами.</em></p></blockquote><blockquote><p><em>Изломанные гарпуны, застрявшие в толстой шкуре.</em></p></blockquote><blockquote><p><em>Чёрный глаз размером с телегу.</em></p></blockquote><blockquote><p><em>И пасть.</em></p></blockquote><blockquote><p><em>Пасть настолько огромная, что в неё свободно поместилась бы шлюпка.</em></p></blockquote><blockquote><p><em>Кашалот обрушивается обратно в море.</em></p></blockquote><blockquote><p><em>Волна с силой ударяет в борт «Текода».</em></p></blockquote><blockquote><p><em>Корабль опасно кренится.</em></p></blockquote><blockquote><p><em>Несколько предметов летят по палубе.</em></p></blockquote><blockquote><p><em>Тортуга хватается за штурвал.</em></p></blockquote><blockquote><p><em>На его лице появляется улыбка, больше похожая на оскал.</em></p></blockquote><blockquote><p><em>— ДОБИ МИК!</em></p></blockquote><blockquote><p><em>Старый тортл вытаскивает гарпун.</em></p></blockquote><blockquote><p><em>Его голос перекрывает рёв моря.</em></p></blockquote><blockquote><p><em>— НАКОНЕЦ-ТО Я ТЕБЯ НАШЁЛ!</em></p></blockquote><blockquote><p><em>Кашалот медленно разворачивается под водой.</em></p></blockquote><blockquote><p><em>Теперь он идёт прямо на корабль.</em></p></blockquote><h2>Проглатывание и гортань</h2><blockquote><p>Истыканное гарпунами тело кашалота несколько раз извивается в предсмертной судороге, окрашивая море вокруг в красный. Из монструозной пасти вырывается душераздирающий визг. Рёв, смешанный с низкочастотным воем, почти сбивает вас с ног. По воде расходятся быстрые круги, пока тело гигантского кита погружается в морскую пучину. Тварь мертва. На этом ваше приключение закончилось бы, если бы из глубины не донёсся отдалённый гул, похожий на звук, который издал Доби Мик.<br><br>Вода вокруг «Текода» чернеет.</p></blockquote><blockquote><p><em>Пасть схлопывается ряды громадных зубов смыкаются с жутким скрежетом. СОлнце исчезает и вы оказываетесь в   полной темноте. корабль приходит в движение вода под кораблем проваливается в громадное горло кита. Корабль падает вниз вместе с вами. вы летите вниз <br>На несколько секунд вокруг воцаряется странная тишина.</em></p></blockquote><blockquote><p><em>Не полная.</em></p></blockquote><blockquote><p><em>Живая.</em></p></blockquote><blockquote><p><em>Пугающая.</em></p></blockquote><blockquote><p><em>Вы поднимаете взгляд и понимаете, что больше не видите ни неба, ни моря.</em></p></blockquote><blockquote><p><em>Вообще ничего привычного.</em></p></blockquote><blockquote><p><em>Через несколько секунд падения вы чувствуете сильный удар, доски палубы с треском лопаются, но падение прекратилось, корабль меняет свое положение, теперь нос оказывается вверху, а корма опадает вниз</em></p></blockquote><blockquote><p>Корабль словно копьё вонзается в глотку чудовища и застревает между огромными складками багровой плоти. Острый бушприт глубоко уходит в мясистую стену пищевода, а палуба висит под углом, будто судно насадили на колоссальный крюк.</p></blockquote><blockquote><p><em>Осмотрев пространство, вы понимаете, что носовая фигура в виде рыбы-мяча вонзилась в мягкую ткань горла, и нос корабля застрял в образовавшейся ране, удерживая весь корабль от падения. <br>Вокруг медленно сокращаются мышцы.</em></p></blockquote><blockquote><p><em>Каждые несколько секунд весь мир начинает двигаться.</em></p></blockquote><blockquote><p><em>Сначала одна стенка тоннеля вздувается.</em></p></blockquote><blockquote><p><em>Потом другая.</em></p></blockquote><blockquote><p><em>Затем по бесконечной трубе пищевода проходит волна сокращений размером с дом.</em></p></blockquote><blockquote><p><em>От этого движения весь «Текод» жалобно скрипит.</em></p></blockquote><blockquote><p><em>Канаты натягиваются.</em></p></blockquote><blockquote><p><em>Доски стонут.</em></p></blockquote><blockquote><p><em>А внизу слышится хруст ломающихся рёбер какого-то огромного морского существа, проглоченного раньше вас.</em></p></blockquote><blockquote><p><em>Воздух горячий.</em></p></blockquote><blockquote><p><em>Тяжёлый.</em></p></blockquote><blockquote><p><em>Каждый вдох наполнен запахом соли, гнили, рыбы и крови.</em></p></blockquote><blockquote><p><em>По стенам пищевода медленно стекает вязкая слизь.</em></p></blockquote><blockquote><p><em>Целые ручьи полупрозрачной жидкости срываются сверху и падают вниз, разбиваясь о палубу, словно дождь.</em></p></blockquote><blockquote><p><em>Где-то далеко впереди тоннель уходит в непроглядную темноту.</em></p></blockquote><blockquote><p><em>Но иногда в глубине что-то вспыхивает.</em></p></blockquote><blockquote><p><em>Бледно-зелёным.</em></p></blockquote><blockquote><p><em>Синим.</em></p></blockquote><blockquote><p><em>Фосфоресцирующим.</em></p></blockquote><blockquote><p><em>Словно внутри чудовища светятся проглоченные медузы или какие-то неизвестные морские организмы.</em></p></blockquote><blockquote><p><em>И тогда вы впервые по-настоящему осознаёте размер существа, которое вас проглотило.</em></p></blockquote><blockquote><p><em>Белый кашалот, которого вы только что убили, был чудовищем.</em></p></blockquote><blockquote><p><em>Но его мать...</em></p></blockquote><blockquote><p><em>Его мать настолько огромна, что целый корабль застрял у неё в горле и даже не мешает ей дышать.<br><br>Где вы находитесь сейчас и как вам удалось удержаться на корабле???</em></p></blockquote><blockquote><p><em>Тортл пярмо сейчас с трудом держиться повиснув руками на штурвале  <br><br>Оглядевшись вы понимаете что вы весите прямо над дыхательным горлом. А ниже под вами в сотне футов виднеется зев пищевода. Шхуна содрогается в последний раз.</em></p></blockquote><h2>Лёгкие</h2><blockquote><p><em>Последний участок дыхательного горла остаётся позади.</em></p></blockquote><blockquote><p><em>С каждым шагом воздух становится влажнее и тяжелее. Стены вокруг уже не напоминают пищевод. Здесь плоть выглядит иначе — более мягкой, более живой.</em></p></blockquote><blockquote><p><em>А затем проход внезапно заканчивается.</em></p></blockquote><blockquote><p><em>Перед вами открывается пространство таких размеров, что разум отказывается сразу принять увиденное.</em></p></blockquote><blockquote><p><em>Это лёгкие.</em></p></blockquote><blockquote><p><em>Гигантские лёгкие существа размером с остров.</em></p></blockquote><blockquote><p><em>Под ногами заканчивается относительно твёрдая поверхность дыхательного горла, и дальше начинается бездна.</em></p></blockquote><blockquote><p><em>Не каменная.</em></p></blockquote><blockquote><p><em>Не водная.</em></p></blockquote><blockquote><p><em>Живая.</em></p></blockquote><blockquote><p><em>Внизу, на многие десятки, а возможно и сотни футов ниже, простирается огромное внутреннее море. Вся нижняя часть лёгких заполнена тёмной водой, которая медленно колышется в такт дыханию чудовища.</em></p></blockquote><blockquote><p><em>Каждый вдох заставляет поверхность подниматься.</em></p></blockquote><blockquote><p><em>Каждый выдох — опускаться.</em></p></blockquote><blockquote><p><em>От этого движения по всей полости проходят медленные волны.</em></p></blockquote><blockquote><p><em>Иногда они разбиваются о мясистые выступы стен и осыпаются вниз дождём кроваво-розовых брызг.</em></p></blockquote><blockquote><p><em>По обе стороны от вас поднимаются гигантские стены живой плоти.</em></p></blockquote><blockquote><p><em>Они уходят вверх настолько высоко, что первое мгновение кажется, будто вы смотрите на отвесные скалы.</em></p></blockquote><blockquote><p><em>Вся их поверхность покрыта бесчисленными пузыревидными образованиями.</em></p></blockquote><blockquote><p><em>Одни размером с яблоко.</em></p></blockquote><blockquote><p><em>Другие — с телегу.</em></p></blockquote><blockquote><p><em>Некоторые достигают размеров небольшого дома.</em></p></blockquote><blockquote><p><em>Огромные альвеолы покрывают стены лёгких подобно колониям странных морских грибов.</em></p></blockquote><blockquote><p><em>Они непрерывно сокращаются и расширяются.</em></p></blockquote><blockquote><p><em>Набухают.</em></p></blockquote><blockquote><p><em>Опадают.</em></p></blockquote><blockquote><p><em>Пульсируют.</em></p></blockquote><blockquote><p><em>Словно всё это место дышит вместе с чудовищем.</em></p></blockquote><blockquote><p><em>Иногда какая-нибудь особенно крупная альвеола вздувается слишком сильно.</em></p></blockquote><blockquote><p><em>Тонкая плёнка натягивается.</em></p></blockquote><blockquote><p><em>Через неё становится видно движение густой тёмной крови.</em></p></blockquote><blockquote><p><em>Затем пузырь вновь сжимается с влажным хлюпающим звуком.</em></p></blockquote><blockquote><p><em>По стенам стекают прозрачные потоки конденсата.</em></p></blockquote><blockquote><p><em>Они собираются в ручьи и водопады, падающие вниз в чёрную воду.</em></p></blockquote><blockquote><p><em>Звук падающих капель эхом разносится по всей полости.</em></p></blockquote><blockquote><p><em>Кап.</em></p></blockquote><blockquote><p><em>Кап.</em></p></blockquote><blockquote><p><em>Кап.</em></p></blockquote><blockquote><p><em>Где-то вдалеке.</em></p></blockquote><blockquote><p><em>Постоянно.</em></p></blockquote><blockquote><p><em>Словно внутри живого собора.</em></p></blockquote><blockquote><p><em>Но больше всего внимание притягивает вершина этого исполинского пространства.</em></p></blockquote><blockquote><p><em>Очень высоко над вами.</em></p></blockquote><blockquote><p><em>Так высоко, что приходится запрокидывать голову.</em></p></blockquote><blockquote><p><em>Среди переплетений мышц и складок плоти виднеется огромный вертикальный проход.</em></p></blockquote><blockquote><p><em>Он уходит вверх через толщу тела.</em></p></blockquote><blockquote><p><em>Туда, где должен находиться внешний мир.</em></p></blockquote><blockquote><p><em>Туда, где находится дыхало.</em></p></blockquote><blockquote><p><em>Альвеолы раздуваются.</em></p></blockquote><blockquote><p><em>Вода внизу приходит в движение.</em></p></blockquote><blockquote><p><em>По лёгким проносится низкий рокочущий звук, похожий одновременно на раскат грома и дыхание бога.<br><br>Вы вглядываетесь в тёмную воду, наполнившую лёгкие, и понимаете, что вода жива. В ней копошатся косяки рыб, осьминоги и несколько десятков торчащих из воды акульих плавников.</em></p></blockquote><h2>Мозг и клеймо</h2><blockquote><p><em>Последний слой плоти поддаётся с влажным хрустом. Лезвие прорезает толстую серо-розовую мембрану, и перед вами открывается пространство, которого вы совершенно не ожидали увидеть внутри живого существа.</em></p></blockquote><blockquote><p><em>Огромная полость теряется во мраке.</em></p></blockquote><blockquote><p><em>Воздух здесь тяжёлый и влажный, наполненный запахом соли, крови и чего-то ещё… чего-то странно электрического.</em></p></blockquote><blockquote><p><em>В центре этой исполинской камеры лежит мозг.</em></p></blockquote><blockquote><p><em>Не просто мозг.</em></p></blockquote><blockquote><p><em>Гигантский мозг размером с городской дом.</em></p></blockquote><blockquote><p><em>Складки сероватой плоти возвышаются над вами подобно холмам и утёсам. Между ними пробегают вспышки бледно-синего света, словно внутри органа непрерывно сверкают крошечные молнии.</em></p></blockquote><blockquote><p><em>Каждый удар сердца кашалота отдаётся здесь глухой вибрацией.</em></p></blockquote><blockquote><p><em>Каждая мысль существа словно проходит через эту пещеру раскатами далёкого грома.</em></p></blockquote><blockquote><p><em>Но почти сразу вы замечаете нечто гораздо более страшное.</em></p></blockquote><blockquote><p><em>На поверхности мозга выжжено клеймо.</em></p></blockquote><blockquote><p><em>Оно выглядит абсолютно чужеродным.</em></p></blockquote><blockquote><p><em>Будто кто-то взял раскалённое железо размером с крепостные ворота и навсегда впечатал его в плоть исполина.</em></p></blockquote><blockquote><p><em>Ткань вокруг почернела и омертвела.</em></p></blockquote><blockquote><p><em>По краям раны нервная ткань пульсирует и судорожно дёргается, словно пытается исцелиться уже многие годы, но не может.</em></p></blockquote><blockquote><p><em>Само клеймо изображает огромный глаз.</em></p></blockquote><blockquote><p><em>Вертикальный зрачок смотрит прямо в пустоту.</em></p></blockquote><blockquote><p><em>Вокруг него расходятся кольца странных символов, похожих одновременно на руны и следы когтей.</em></p></blockquote><blockquote><p><em>А из верхней части глаза вырастают десятки длинных извивающихся щупалец.</em></p></blockquote><blockquote><p><em>Они тянутся вверх и наружу, переплетаясь между собой подобно клубку живых змей.</em></p></blockquote><blockquote><p><em>И когда вы смотрите на знак слишком долго...</em></p></blockquote><blockquote><p><em>Начинает казаться, что глаз смотрит в ответ.</em></p></blockquote><blockquote><p><em>Складки мозга вокруг клейма вздрагивают.</em></p></blockquote><blockquote><p><em>По поверхности пробегает волна судорог.</em></p></blockquote><blockquote><p><em>В голове раздаётся далёкий шёпот.</em></p></blockquote><blockquote><p><em>Сначала тихий.</em></p></blockquote><blockquote><p><em>Почти неразличимый.</em></p></blockquote><blockquote><p><em>Затем всё громче.</em></p></blockquote><blockquote><p><em>Словно тысячи голосов одновременно пытаются что-то сказать на языке, который не предназначен для человеческого разума.</em></p></blockquote><blockquote><p><em>У некоторых из вас начинает кружиться голова.</em></p></blockquote><blockquote><p><em>Перед глазами мелькают образы.</em></p></blockquote><blockquote><p><em>Бездна.</em></p></blockquote><blockquote><p><em>Тёмная вода.</em></p></blockquote><blockquote><p><em>Огромная тень под океаном.</em></p></blockquote><blockquote><p><em>Щупальца длиной с корабельные мачты.</em></p></blockquote><blockquote><p><em>И единственный немигающий глаз, наблюдающий из глубин мира.</em></p></blockquote><p>Зачитайте этот абзац только Орландо, если он есть в партии.</p><blockquote><p><em>Орландо, ты чувствуешь, как что-то внутри тебя сжимается при виде этого клейма, сжимается от страха и улыбается от предвкушения, как будто тиран-отец пришёл домой, и ты ждёшь новых побоев, но вместо ударов протягивает тебе леденец. И ты боишься его, боишься протянуть руку и забрать угощение.</em></p></blockquote><h2>Дыхало: описания препятствий</h2><blockquote><p><em>Пространство вокруг начинает сокращаться, как будто ваши шаги вызывают щекотку у существа, вы слышите, как легкие начинают судорожно расширяться и сокращаться, набирая воду внутрь себя и готовясь чихнуть. Вы понимаете, что скоро поток воды из лёгких понесется бить гейзером из дахало существа.</em></p></blockquote><blockquote><p><em>Слизистый обвал. Со стен срывается огромный пласт скользкой слизи и перекрывает путь. Приходится карабкаться поверх него или пробиваться сквозь него.</em></p></blockquote><blockquote><p><em>Судорожный спазм. Стенки прохода резко сжимаются, едва не расплющив героев между складками плоти.</em></p></blockquote><blockquote><p><em>Водяной вал. Первая волна воды прорывается снизу и сбивает всех, кто не успел закрепиться.</em></p></blockquote><blockquote><p><em>Лопнувшая альвеола. Огромный пузырь на стене взрывается потоком жидкости и ошмётков ткани.</em></p></blockquote><blockquote><p><em>Нервный разряд. По стене проходит электрический импульс. Всё вокруг вспыхивает синим светом, а прикосновение к стене становится болезненным.</em></p></blockquote><blockquote><p><em>Липкая альвеола. Огромная альвеола с влажным хлопком схлопывается. Тягучая слизь тянется за первым, кто проходит рядом, и мешает двигаться дальше.</em></p></blockquote><blockquote><p><em>Скользкий склон. Очередной участок дыхала покрыт свежей слизью и превращается в настоящую горку.</em></p></blockquote><blockquote><p><em>Кашель. Чудовище начинает кашлять раньше времени. Навстречу героям несётся ураганный порыв воздуха.</em></p></blockquote><blockquote><p><em>Застрявший кальмар. Полупереваренный гигантский кальмар намертво застрял в проходе и перекрывает половину тоннеля.</em></p></blockquote><blockquote><p><em>Сужение дыхала. Проход резко уменьшается, заставляя пролезать через узкую живую щель.</em></p></blockquote><blockquote><p><em>Фонтан мокроты. Из трещины в стене под давлением вырывается струя вязкой жидкости.</em></p></blockquote><blockquote><p><em>Пульсирующий нарост. Огромный мясистый пузырь то расширяется, то сжимается, перекрывая путь каждые несколько секунд.</em></p></blockquote><blockquote><p><em>Водоворот. Поток воды начинает закручиваться вокруг выступа ткани и утягивает всё к стене.</em></p></blockquote><blockquote><p><em>Потерянный гарпун. В стене застрял древний гарпун китобоев. Канаты вокруг него образуют смертельно опасную ловушку.</em></p></blockquote><blockquote><p><em>Стая лёгочных рыб. Небольшие паразитические рыбы паникуют из-за приближающегося чиха и летят навстречу героям целым косяком.</em></p></blockquote><blockquote><p><em>Разрыв ткани. Участок стены проваливается, открывая глубокую полость, которую нужно перепрыгнуть.</em></p></blockquote><blockquote><p><em>Кровяной выброс. Лопается крупный сосуд, и тоннель начинает быстро заполняться тёплой кровью.</em></p></blockquote><blockquote><p><em>Судорожное дыхание. Очередной вдох меняет направление воздушного потока, буквально отбрасывая героев назад.</em></p></blockquote><blockquote><p><em>Застрявший корабельный обломок. Когда-то проглоченный фрагмент судна намертво вклинился в стену дыхала и образовал лабиринт из досок и канатов.</em></p></blockquote><blockquote><p><em>Преждевременный чих. Кашалот начинает чихать раньше, чем ожидалось. Позади появляется гигантская стена воды, и времени на преодоление следующего препятствия почти не остаётся.</em></p></blockquote><h2>Желудок и кислотное море</h2><blockquote><p><em>Последний участок пищевода остаётся позади.</em></p></blockquote><blockquote><p><em>С каждым шагом воздух становится горячее.</em></p></blockquote><blockquote><p><em>Тяжелее.</em></p></blockquote><blockquote><p><em>Влажнее.</em></p></blockquote><blockquote><p><em>Запах, который сопровождал вас с момента попадания внутрь кашалота, постепенно усиливается, пока не превращается в нечто почти осязаемое.</em></p></blockquote><blockquote><p><em>А затем проход заканчивается.</em></p></blockquote><blockquote><p><em>Перед вами открывается желудок.</em></p></blockquote><blockquote><p><em>Даже самые смелые из вас на несколько секунд забывают о движении.</em></p></blockquote><blockquote><p><em>Полость настолько огромна, что напоминает подземную пещеру или внутренний зал какого-нибудь чудовищного дворца.</em></p></blockquote><blockquote><p><em>Только всё вокруг живое.</em></p></blockquote><blockquote><p><em>Стены непрерывно сокращаются.</em></p></blockquote><blockquote><p><em>Пульсируют.</em></p></blockquote><blockquote><p><em>Дрожат.</em></p></blockquote><blockquote><p><em>По ним стекают густые потоки прозрачной жидкости.</em></p></blockquote><blockquote><p><em>А внизу раскинулось целое море желудочного сока.</em></p></blockquote><blockquote><p><em>Кислота.</em></p></blockquote><blockquote><p><em>Бескрайнее кислотное озеро, теряющееся где-то во мраке.</em></p></blockquote><blockquote><p><em>Его поверхность непрерывно бурлит.</em></p></blockquote><blockquote><p><em>Там и здесь поднимаются огромные пузыри.</em></p></blockquote><blockquote><p><em>Некоторые лопаются почти бесшумно.</em></p></blockquote><blockquote><p><em>Другие взрываются с оглушительным хлопком, выбрасывая вверх облака едких испарений.</em></p></blockquote><blockquote><p><em>Каждый такой выброс заставляет глаза слезиться.</em></p></blockquote><blockquote><p><em>Горло начинает жечь.</em></p></blockquote><blockquote><p><em>Дышать становится тяжело.</em></p></blockquote><blockquote><p><em>Воздух наполнен запахом разложения.</em></p></blockquote><blockquote><p><em>Гниющей рыбы.</em></p></blockquote><blockquote><p><em>Сгоревшего мяса.</em></p></blockquote><blockquote><p><em>Соли.</em></p></blockquote><blockquote><p><em>Крови.</em></p></blockquote><blockquote><p><em>И чего-то настолько отвратительного, что разум отказывается подбирать сравнения.</em></p></blockquote><blockquote><p><em>Иногда из глубин кислотного моря поднимаются силуэты.</em></p></blockquote><blockquote><p><em>Огромные.</em></p></blockquote><blockquote><p><em>Искажённые.</em></p></blockquote><blockquote><p><em>Лишь на мгновение показывающиеся над поверхностью.</em></p></blockquote><blockquote><p><em>Полупереваренные туши акул.</em></p></blockquote><blockquote><p><em>Гигантские кальмары.</em></p></blockquote><blockquote><p><em>Останки неизвестных морских существ, которых вы не можете опознать даже приблизительно.</em></p></blockquote><blockquote><p><em>Некоторые ещё продолжают растворяться прямо у вас на глазах.</em></p></blockquote><blockquote><p><em>Куски плоти медленно отслаиваются от костей и исчезают в бурлящей кислоте.</em></p></blockquote><blockquote><p><em>Но далеко не всё может быть переварено.</em></p></blockquote><blockquote><p><em>Там и здесь по поверхности дрейфуют острова мусора.</em></p></blockquote><blockquote><p><em>Покрытые слизью обломки кораблей.</em></p></blockquote><blockquote><p><em>Опрокинутые шлюпки.</em></p></blockquote><blockquote><p><em>Ящики.</em></p></blockquote><blockquote><p><em>Бочки.</em></p></blockquote><blockquote><p><em>Обломки мачт.</em></p></blockquote><blockquote><p><em>Цепи.</em></p></blockquote><blockquote><p><em>Якоря.</em></p></blockquote><blockquote><p><em>Металлические листы и пластины неизвестного происхождения.</em></p></blockquote><blockquote><p><em>Целые участки этого странного архипелага выглядят так, словно собирались здесь десятилетиями.</em></p></blockquote><blockquote><p><em>А возможно и столетиями.</em></p></blockquote><blockquote><p><em>Иногда очередная волна желудочных сокращений проходит по органу.</em></p></blockquote><blockquote><p><em>Тогда всё пространство содрогается.</em></p></blockquote><blockquote><p><em>Кислотное море приходит в движение.</em></p></blockquote><blockquote><p><em>Острова обломков сталкиваются друг с другом.</em></p></blockquote><blockquote><p><em>По всему желудку разносится скрежет дерева и металла.</em></p></blockquote><blockquote><p><em>А затем из глубин снова поднимается пузырь размером с дом.</em></p></blockquote><blockquote><p><em>На несколько секунд освещая всё вокруг бледно-зелёным свечением кислотных испарений.</em></p></blockquote><h2>Нервный узел желудка</h2><blockquote><p><em>На противоположной стороне желудка вы замечаете небольшую ступеньку из его стенок. Над ней, поблёскивая электрическими разрядами, висит сплетение нервных узлов. На юге сходятся воедино множество вен.</em></p></blockquote><h2>Сердце</h2><blockquote><p><em>Прорвавшись сквозь сплетение сосудов и плоть, вы видите громадное сердце. От каждого его сокращения вас отбрасывает назад. Нежная ткань сердца находится всего в нескольких футах.</em></p></blockquote><h2>Кишечник: описания препятствий</h2><blockquote><p><em>Кишечный спазм. Стенка кишечника резко сокращается, сжимая тоннель и создавая гигантскую волну.</em></p></blockquote><blockquote><p><em>Водоворот. Поток начинает вращаться вокруг складки кишечника, пытаясь перевернуть плот.</em></p></blockquote><blockquote><p><em>Застрявший якорь. Огромный якорь древнего корабля зацепился за стену и перекрывает половину прохода.</em></p></blockquote><blockquote><p><em>Кислотный выброс. Из стенки кишечника вырывается струя концентрированной кислоты.</em></p></blockquote><blockquote><p><em>Останки кальмара. Полупереваренное щупальце размером с дерево перекручивается поперёк русла.</em></p></blockquote><blockquote><p><em>Куча костей. Скопление костей крупных морских существ образует опасный риф.</em></p></blockquote><blockquote><p><em>Паразит-червь. Из складок выползает огромный кишечный паразит и пытается проглотить кого-нибудь с плота.</em></p></blockquote><blockquote><p><em>Пузырь газа. Из глубины поднимается пузырь размером с дом и взрывается под плотом.</em></p></blockquote><blockquote><p><em>Остов корабля. В тоннеле застрял почти целый корпус старого судна.</em></p></blockquote><blockquote><p><em>Слизистая волна. Поток густой слизи накрывает плот, ослепляя и сбивая с ног.</em></p></blockquote><blockquote><p><em>Кишечный изгиб. Русло резко поворачивает почти под прямым углом.</em></p></blockquote><blockquote><p><em>Металлический дождь. Потоком сверху срывает старые цепи, гвозди и обломки металлических пластин.</em></p></blockquote><blockquote><p><em>Живой затор. Огромная масса полупереваренной рыбы и кальмаров образует плотину.</em></p></blockquote><blockquote><p><em>Обратная волна. Новый спазм кишечника создаёт встречную волну.</em></p></blockquote><blockquote><p><em>Колония паразитов. Тысячи мелких существ покрывают стенки тоннеля и прыгают на проплывающий плот.</em></p></blockquote><blockquote><p><em>Разрыв ткани. В стенке кишечника открывается глубокая рана, затягивающая поток внутрь.</em></p></blockquote><blockquote><p><em>Костяная арка. Огромный позвоночник неизвестного морского чудовища перегородил проход.</em></p></blockquote><blockquote><p><em>Газовый карман. Вся полость впереди заполнена взрывоопасным кишечным газом. Любой огонь может вызвать взрыв.</em></p></blockquote><blockquote><p><em>Переваренный корабль. Поток выбрасывает на героев град из досок, мачт и обломков давно уничтоженного судна.</em></p></blockquote><blockquote><p><em>Финальный спазм. Кишечник резко ускоряет поток, превращая путешествие в неуправляемый аттракцион перед самым выходом.</em></p></blockquote></div>"
+          }
+        },
+        {
+          "name": "Сцены и автоматизация",
+          "type": "text",
+          "text": {
+            "format": 1,
+            "content": "<h1>Сцены и автоматизация</h1><h2>Лёгкие: цикл боя из 3 раундов</h2><ol><li>Раунд 1 — вдох: карта надутых альвеол; соседние выступы почти соприкасаются.</li><li>Раунд 2 — вода поднимается на 20 футов; не закрепившиеся проходят спасбросок Силы СЛ 14, при провале их сносит на 20 футов.</li><li>Раунд 3 — выдох: карта сдутых альвеол; переход требует Атлетики или Акробатики СЛ 15 либо помощи союзника.</li></ol><p>Цикл повторяется до выхода из лёгких. Каждый второй раунд вода поднимается ещё на 20 футов; достигнутый уровень сохраняется в третьем раунде и во всех следующих фазах. После каждого нового цикла подъём повторяется, пока вода не заполнит лёгкие. Модуль автоматически меняет фон сцены и перемещает маркер воды; группа успехов (3 до 2 провалов) и урон от падения остаются ручными решениями ведущего.</p><p><b>Анимация дыхательного цикла:</b><br><img src=\"modules/dobi-mik-adventure/assets/lungs/lungs-cycle.gif\" style=\"width:75%;height:auto\"></p><h2>Остальные сцены</h2><p>На боевых картах нет токенов и стен. Выставляйте героев и противников вручную. Масштаб карт: 5 футов на клетку; обычные карты — 48 px, лёгкие — 30 px на клетку.</p><h2>Инициатива</h2><p>Визуальную ленту инициативы включает отдельный модуль «Визуализатор инициативы Доби Мика».</p><h2>Кнопки боёв и автоматические действия</h2><p>Панель ведущего открывается макросом «Доби Мик: панель управления». Кнопка боя открывает сцену, создаёт отдельные токены участников за краем карты и добавляет их в инициативу: палуба — Доби Мик и Тортуга; лёгкие — 2 слизистых альвеолярных хищника и 3 лёгочные пиявки; кислотное море желудка — 4 кишечных паразита.</p><p>Чтобы провести атаку из панели, отметьте один или несколько токенов-целей стандартным наведением Foundry (T), затем нажмите кнопку действия. Для каждой цели бросок атаки выполняется отдельно; при попадании урон автоматически применяется к текущим хитам с учётом сопротивлений и уязвимостей dnd5e. Крит удваивает кости урона. Мультиатака паразита делает два отдельных броска по каждой отмеченной цели.</p><p>Способности со спасброском открывают окно по каждой отмеченной цели с её именем и кнопками «Спасбросок пройден» и «Спасбросок не пройден». Выберите фактический результат броска: модуль рассчитает полный, половинный или нулевой урон согласно способности и применит состояния провалившей цели.</p><p>Панель автоматически обрабатывает гарпун Тортуги и действие Помощь. Помощь отмечается в чате; преимущество применяется к следующей подходящей проверке корабля или снастей. Состояния проглатывания и периодический урон в следующие раунды ведущий продолжает отслеживать вручную.</p><p>Составы боёв заданы кнопками и не создают дополнительные экземпляры по случайным таблицам. На одном прохождении после Доби Мика группа выбирает только один внутренний маршрут.</p>"
+          }
+        },
+        {
+          "name": "Палуба «Текода»",
+          "type": "text",
+          "text": {
+            "format": 1,
+            "content": "<h1>Палуба «Текода»</h1><figure><img src=\"modules/dobi-mik-adventure/assets/landscapes/01_deck_tortuga.jpg\" style=\"width:100%;height:auto\"></figure><p>Тортуга — единственный NPC на борту; остальные на палубе — персонажи игроков.</p>"
+          }
+        },
+        {
+          "name": "Великое лёгкое море",
+          "type": "text",
+          "text": {
+            "format": 1,
+            "content": "<h1>Великое лёгкое море</h1><figure><img src=\"modules/dobi-mik-adventure/assets/landscapes/02_lungs.jpg\" style=\"width:100%;height:auto\"></figure><p>Боковой вид вертикального подъёма. Надутые альвеолы упрощают переход, сдутые усложняют.</p>"
+          }
+        },
+        {
+          "name": "Желудок",
+          "type": "text",
+          "text": {
+            "format": 1,
+            "content": "<h1>Желудок</h1><figure><img src=\"modules/dobi-mik-adventure/assets/landscapes/03_stomach.jpg\" style=\"width:100%;height:auto\"></figure><p>Кислотное море, бугры и разрозненные острова мусора; не показывайте игрокам готовый маршрут.</p>"
+          }
+        },
+        {
+          "name": "Бой с Доби Миком",
+          "type": "text",
+          "text": {
+            "format": 1,
+            "content": "<h1>Бой с Доби Миком</h1><figure><img src=\"modules/dobi-mik-adventure/assets/landscapes/04_open_sea_whale.jpg\" style=\"width:100%;height:auto\"></figure><p>Вид с палубы в открытое море; тактическая сцена отдельно находится на карте «Палуба Текода».</p>"
+          }
+        },
+        {
+          "name": "Корабль в гортани",
+          "type": "text",
+          "text": {
+            "format": 1,
+            "content": "<h1>Корабль в гортани</h1><figure><img src=\"modules/dobi-mik-adventure/assets/landscapes/05_throat_ship.jpg\" style=\"width:100%;height:auto\"></figure><p>«Текод» застрял под углом в гортани; отсюда партия выбирает дыхательный или пищеварительный маршрут.</p>"
+          }
+        },
+        {
+          "name": "Мозг и клеймо",
+          "type": "text",
+          "text": {
+            "format": 1,
+            "content": "<h1>Мозг и клеймо</h1><figure><img src=\"modules/dobi-mik-adventure/assets/landscapes/06_brain.jpg\" style=\"width:100%;height:auto\"></figure><p>Опциональная сцена. В центре — клеймо с открытым глазом.</p>"
+          }
+        },
+        {
+          "name": "Дыхало",
+          "type": "text",
+          "text": {
+            "format": 1,
+            "content": "<h1>Дыхало</h1><figure><img src=\"modules/dobi-mik-adventure/assets/landscapes/07_blowhole.jpg\" style=\"width:100%;height:auto\"></figure><p>Вертикальный выход к свету и поверхности.</p>"
+          }
+        },
+        {
+          "name": "Сердце",
+          "type": "text",
+          "text": {
+            "format": 1,
+            "content": "<h1>Сердце</h1><figure><img src=\"modules/dobi-mik-adventure/assets/landscapes/08_heart.jpg\" style=\"width:100%;height:auto\"></figure><p>Опциональная сцена внутри сосудистой камеры.</p>"
+          }
+        },
+        {
+          "name": "Кишечник",
+          "type": "text",
+          "text": {
+            "format": 1,
+            "content": "<h1>Кишечник</h1><figure><img src=\"modules/dobi-mik-adventure/assets/landscapes/09_intestine.jpg\" style=\"width:100%;height:auto\"></figure><p>Поток среди старых обломков, костей и препятствий.</p>"
+          }
+        },
+        {
+          "name": "Финал",
+          "type": "text",
+          "text": {
+            "format": 1,
+            "content": "<h1>Финал</h1><figure><img src=\"modules/dobi-mik-adventure/assets/landscapes/10_final_surface.jpg\" style=\"width:100%;height:auto\"></figure><p>Открытое море после выхода из кита; состояние матери-кита зависит от решений группы.</p>"
+          }
+        }
+      ],
+      "ownership": {
+        "default": 0
+      },
+      "flags": {
+        "dobi-mik-adventure": {
+          "sourceKey": "main-journal"
+        }
+      }
+    }
+  ]
+}
